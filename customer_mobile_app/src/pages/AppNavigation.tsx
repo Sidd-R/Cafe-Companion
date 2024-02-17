@@ -36,8 +36,6 @@ type Props = NativeStackScreenProps<AuthStackParamList, 'APP'>;
 const Tab = createBottomTabNavigator<AppBottomNavigationParamList>();
 
 const AppNavigation = ({navigation}: Props) => {
-  const [update, setUpdate] = React.useState(false);
-  const [checkUpdate, setCheckUpdate] = React.useState(true);
 
   return (
     <>
@@ -84,7 +82,7 @@ const AppNavigation = ({navigation}: Props) => {
                   ? options.title
                   : route.name;
 
-              return label;
+              return label.toString(); // Convert label to string
             }}
           />
         )}>
@@ -104,7 +102,7 @@ const AppNavigation = ({navigation}: Props) => {
           options={{
             tabBarLabel: 'Settings',
             tabBarIcon: ({color, size}) => {
-              return <Icon name="cog" size={size} color={color} />;
+              return <Icon name="shop" size={size} color={color} />;
             },
           }}
         />
@@ -114,7 +112,7 @@ const AppNavigation = ({navigation}: Props) => {
           options={{
             tabBarLabel: 'Settings',
             tabBarIcon: ({color, size}) => {
-              return <Icon name="cog" size={size} color={color} />;
+              return <Icon name="search" size={size} color={color} />;
             },
           }}
         />
