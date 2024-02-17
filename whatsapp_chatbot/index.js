@@ -83,6 +83,21 @@ client.on("message", async (message) => {
       };
       console.log(new_review);
       storeReview(new_review);
+      if (new_review.stars < 3) {
+        const feedback = spawner("python", [
+          "feedback.py",
+          new_review["comment"],
+        ]);
+        feedback.stdout.on("data", async (data) => {
+          console.log(data.toString());
+          data = data.toString();
+          const temp = JSON.parse(data);
+          await message.reply(
+            "Management has been informed about the following improvements: \n" +
+              temp.Improvement
+          );
+        });
+      }
       console.log("Review stored!");
     });
     await message.reply(
