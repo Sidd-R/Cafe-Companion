@@ -17,90 +17,57 @@ import {
   View,
 } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import HomeScreen from './pages/HomeScreen';
+import ShopScreen from './pages/ShopScreen';
+import AppNavigation from './pages/AppNavigation';
+import SearchScreen from './pages/SearchScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
 function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
   React.useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
-    },2000);
-  },[]);
+    }, 2000);
+  }, []);
 
   return (
     <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+      <Text style={[styles.sectionTitle]}>{title}</Text>
+      <Text style={[styles.sectionDescription]}>{children}</Text>
     </View>
   );
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+export type AuthStackParamList = {
+  HOME: undefined;
+  SHOP: undefined;
+  SEARCH: undefined;
+  APP: undefined;
+};
 
+const AuthStack = createNativeStackNavigator<AuthStackParamList>();
+
+function App(): React.JSX.Element {
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: '#fff9f3',
+    flex: 1,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={backgroundStyle}>
+        <AuthStack.Navigator screenOptions={{headerShown: false}}>
+          <AuthStack.Screen name="HOME" component={HomeScreen} />
+          <AuthStack.Screen name="APP" component={AppNavigation} />
+          <AuthStack.Screen name="SHOP" component={ShopScreen} />
+          <AuthStack.Screen name="SEARCH" component={SearchScreen} />
+        </AuthStack.Navigator>
+      </SafeAreaView>
+    </>
   );
 }
 
