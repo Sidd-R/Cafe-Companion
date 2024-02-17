@@ -3,6 +3,7 @@ const fs = require("fs");
 const { storeOrder } = require("./storeSQL");
 const pdfGen = require("./mail");
 const { storeReview } = require("./storeReview");
+const { storeImp } = require("./storeImp");
 
 const {
   Client,
@@ -92,6 +93,7 @@ client.on("message", async (message) => {
           console.log(data.toString());
           data = data.toString();
           const temp = JSON.parse(data);
+          storeImp(temp.Improvement);
           await message.reply(
             "Management has been informed about the following improvements: \n" +
               temp.Improvement
