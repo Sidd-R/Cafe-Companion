@@ -1,11 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import {
-  APIProvider,
-  Map,
-  Marker,
-  InfoWindow,
-} from "@vis.gl/react-google-maps";
+import GoogleMapReact from "google-map-react";
+import Marker from "@/components/Marker";
 
 interface Restaurant {
   id: number;
@@ -49,62 +45,52 @@ const MapComponent: React.FC = () => {
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<Restaurant | null>(null);
 
+  const handleMarkerClick = (restaurant: Restaurant) => {
+    console.log("Restaurant clicked:", restaurant);
+    setSelectedRestaurant(restaurant);
+  };
+
   return (
-    <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
-      <div className="md:pl-64">
-        <div style={{ height: "700px", width: "100%" }}>
-          <Map>
-            {restaurants.map((restaurant) => (
-              <Marker
-                key={restaurant.id}
-                position={{
-                  lat: restaurant.latitude,
-                  lng: restaurant.longitude,
-                }}
-                onClick={() => setSelectedRestaurant(restaurant)}
-                clickable={true}
-              />
-            ))}
+    <div className="md:pl-64">
+      <div style={{ height: "700px", width: "100%" }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{
+            key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
+          }}
+          defaultCenter={defaultCenter}
+          defaultZoom={defaultZoom}
+        >
+          {restaurants.map((restaurant) => (
+            <Marker
+              key={restaurant.id}
+              lat={restaurant.latitude}
+              lng={restaurant.longitude}
+              onClick={() => handleMarkerClick(restaurant)}
+            />
+          ))}
 
-            {selectedRestaurant && (
-              <InfoWindow
-                position={{
-                  lat: selectedRestaurant.latitude,
-                  lng: selectedRestaurant.longitude,
-                }}
-                onClose={() => setSelectedRestaurant(null)}
-              >
-                <div className="p-4">
-                  <div className="flex justify-between">
-                    Selected Restaurant
-                    <div className="w-48">
-                      <h3>{selectedRestaurant.name}</h3>
-                      <p>{selectedRestaurant.additionalData}</p>
-                      <p>Rating: {selectedRestaurant.rating}</p>
-                      <p>
-                        Strengths: {selectedRestaurant.strengths.join(", ")}
-                      </p>
-                      <p>
-                        Weaknesses: {selectedRestaurant.weaknesses.join(", ")}
-                      </p>
-                    </div>
-
-                    {/* Other Restaurant */}
-                    <div className="w-48">
-                      <h3>{restaurants[1].name}</h3>
-                      <p>{restaurants[1].additionalData}</p>
-                      <p>Rating: {restaurants[1].rating}</p>
-                      <p>Strengths: {restaurants[1].strengths.join(", ")}</p>
-                      <p>Weaknesses: {restaurants[1].weaknesses.join(", ")}</p>
-                    </div>
-                  </div>
-                </div>
-              </InfoWindow>
-            )}
-          </Map>
-        </div>
+          {selectedRestaurant && (
+            <div
+              style={{
+                position: "absolute",
+                top: selectedRestaurant.latitude,
+                left: selectedRestaurant.longitude,
+                backgroundColor: "white",
+                padding: "10px",
+                border: "1px solid black",
+                zIndex: 1,
+              }}
+            >
+              <h3>{selectedRestaurant.name}</h3>
+              <p>{selectedRestaurant.additionalData}</p>
+              <p>Rating: {selectedRestaurant.rating}</p>
+              <p>Strengths: {selectedRestaurant.strengths.join(", ")}</p>
+              <p>Weaknesses: {selectedRestaurant.weaknesses.join(", ")}</p>
+            </div>
+          )}
+        </GoogleMapReact>
       </div>
-    </APIProvider>
+    </div>
   );
 };
 
