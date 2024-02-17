@@ -16,6 +16,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
 import {
   Colors,
@@ -31,6 +32,13 @@ type SectionProps = PropsWithChildren<{
 
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    },2000);
+  },[]);
+
   return (
     <View style={styles.sectionContainer}>
       <Text
