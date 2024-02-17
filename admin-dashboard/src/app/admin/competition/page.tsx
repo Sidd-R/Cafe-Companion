@@ -7,6 +7,7 @@ import {
   InfoWindow,
 } from "@vis.gl/react-google-maps";
 
+// Define the Restaurant interface
 interface Restaurant {
   id: number;
   name: string;
@@ -18,10 +19,12 @@ interface Restaurant {
   weaknesses: string[];
 }
 
+// Define the MapComponent functional component
 const MapComponent: React.FC = () => {
   const defaultCenter = { lat: 37.7749, lng: -122.4194 }; // Example coordinates for San Francisco
   const defaultZoom = 15;
 
+  // Define an array of restaurants
   const restaurants: Restaurant[] = [
     {
       id: 1,
@@ -46,14 +49,23 @@ const MapComponent: React.FC = () => {
     // Add other restaurants here
   ];
 
+  // Define state to keep track of the selected restaurant
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<Restaurant | null>(null);
 
+  // Define state to control the display of the comparison panel
+  const [showComparisonPanel, setShowComparisonPanel] = useState(false);
+
+  // Function to handle the button click and show the comparison panel
+  const handleComparisonButtonClick = () => {
+    setShowComparisonPanel(true);
+  };
+
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
-      <div className="md:pl-64">
+      <div className="md:pl-64 relative">
         <div style={{ height: "700px", width: "100%" }}>
-          <Map>
+          <Map zoom={defaultZoom} center={defaultCenter}>
             {restaurants.map((restaurant) => (
               <Marker
                 key={restaurant.id}
@@ -75,37 +87,55 @@ const MapComponent: React.FC = () => {
                 onClose={() => setSelectedRestaurant(null)}
               >
                 <div className="p-4">
-                  <div className="flex justify-between">
-                    Selected Restaurant
-                    <div className="w-48">
-                      <h3>{selectedRestaurant.name}</h3>
-                      <p>{selectedRestaurant.additionalData}</p>
-                      <p>Rating: {selectedRestaurant.rating}</p>
-                      <p>
-                        Strengths: {selectedRestaurant.strengths.join(", ")}
-                      </p>
-                      <p>
-                        Weaknesses: {selectedRestaurant.weaknesses.join(", ")}
-                      </p>
-                    </div>
-
-                    {/* Other Restaurant */}
-                    <div className="w-48">
-                      <h3>{restaurants[1].name}</h3>
-                      <p>{restaurants[1].additionalData}</p>
-                      <p>Rating: {restaurants[1].rating}</p>
-                      <p>Strengths: {restaurants[1].strengths.join(", ")}</p>
-                      <p>Weaknesses: {restaurants[1].weaknesses.join(", ")}</p>
-                    </div>
-                  </div>
+                  {/* Display only the name of the selected restaurant */}
+                  <h3 className="font-bold text-lg">
+                    {selectedRestaurant.name}
+                  </h3>
+                  {/* Add a button to open the comparison panel */}
+                  <button
+                    onClick={handleComparisonButtonClick}
+                    className="mt-4 p-2 bg-blue-600 text-white rounded-sm"
+                  >
+                    View Comparison
+                  </button>
                 </div>
               </InfoWindow>
             )}
           </Map>
+
+          {/* Glassmorphism comparison panel */}
+          {showComparisonPanel && (
+            <div className="glassmorphism absolute right-4 z-10 top-4 backdrop-blur-lg rounded-md overflow-hidden border border-gray-300">
+              <div className="p-4 font-semibold text-blue-700">
+                <h3 className="text-xl mb-2">
+                  Comparison with {selectedRestaurant?.name}
+                </h3>
+                <div className="mb-2">
+                  <span className="text-gray-900">Rating:</span>{" "}
+                  {selectedRestaurant?.rating}
+                </div>
+                <div className="mb-2">
+                  <span className="text-gray-900">Strengths:</span>{" "}
+                  {selectedRestaurant?.strengths.join(", ")}
+                </div>
+                <div className="mb-2">
+                  <span className="text-gray-900">Weaknesses:</span>{" "}
+                  {selectedRestaurant?.weaknesses.join(", ")}
+                </div>
+                <button
+                  className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300"
+                  onClick={() => setShowComparisonPanel(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </APIProvider>
   );
 };
 
+// Export the MapComponent
 export default MapComponent;

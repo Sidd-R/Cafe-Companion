@@ -2,7 +2,7 @@
 import { useState } from "react";
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { SocketContext } from "../layout";
+// import { SocketContext } from "../layout";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -15,6 +15,8 @@ import {
   Filler,
 } from "chart.js";
 import Forecast from "@/components/Forecast";
+import Histogram from "@/components/Histogram";
+import PieChart from "@/components/PieChart";
 
 const testData = [
   { testNo: 1, score: 80 },
@@ -134,7 +136,7 @@ const AnalysisPage = () => {
   };
   return (
     <div className="w-full h-[100vh] flex flex-col items-center mt-5 md:pl-64">
-      <div className="mt-2 mb-10">
+      {/* <div className="mt-2 mb-10">
         <h1>Select Product to Get Detailed Analysis</h1> 
         <select
           id="product"
@@ -149,6 +151,10 @@ const AnalysisPage = () => {
             </option>
           ))}
         </select>
+      </div> */}
+      <div className="flex flex-row items-center w-[100%] justify-evenly px-10">
+        <Histogram />
+        <PieChart />
       </div>
       <div
         style={{
@@ -158,9 +164,9 @@ const AnalysisPage = () => {
         }}
       >
         {/* <Line data={chartData} options={chartOptions} /> */}
-        <Forecast/>
+        <Forecast />
       </div>
-        {/* <div className="flex gap-6 mt-8">
+      {/* <div className="flex gap-6 mt-8">
       <button onClick={handlePrevClick} className="bg-indigo-600 text-white p-2 rounded-md w-48">Previous 5 Days</button>
       <button onClick={handleNextClick} className="bg-indigo-600 text-white p-2 rounded-md w-48">Next 5 Days</button>
       </div> */}

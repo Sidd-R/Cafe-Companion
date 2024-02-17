@@ -1,7 +1,7 @@
-'use client';
-import { Fragment, useState } from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
-import { usePathname } from 'next/navigation'
+"use client";
+import { Fragment, useState } from "react";
+import { Dialog, Menu, Transition } from "@headlessui/react";
+import { usePathname } from "next/navigation";
 import {
   BellIcon,
   CalendarIcon,
@@ -13,26 +13,53 @@ import {
   UsersIcon,
   // XIcon,
   XMarkIcon,
-  Bars3Icon
-} from '@heroicons/react/24/outline'
-import { SparklesIcon } from '@heroicons/react/24/solid'
-import Link from 'next/link';
+  Bars3Icon,
+} from "@heroicons/react/24/outline";
+import { SparklesIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const navigation = [
-  { name: 'Dashboard', href: '/admin', icon: HomeIcon, current: true },
-  { name: 'Products', href: '/admin/products', icon: UsersIcon, current: false },
-  { name: 'Analysis', href: '/admin/analysis', icon: FolderIcon, current: false },
-  { name: 'Competition', href: '/admin/competition', icon: ChartBarIcon, current: false },
-]
+  { name: "Dashboard", href: "/admin", icon: HomeIcon, current: true },
+  {
+    name: "Products",
+    href: "/admin/products",
+    icon: UsersIcon,
+    current: false,
+  },
+  {
+    name: "Analysis",
+    href: "/admin/analysis",
+    icon: FolderIcon,
+    current: false,
+  },
+  {
+    name: "Competition",
+    href: "/admin/competition",
+    icon: ChartBarIcon,
+    current: false,
+  },
+  {
+    name: "Customers",
+    href: "/admin/customers",
+    icon: InboxIcon,
+    current: false,
+  },
+  {
+    name: "Sales",
+    href: "/admin/sales",
+    icon: CalendarIcon,
+    current: false,
+  }
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar1() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
-  const updatedNavigation = navigation.map(item => ({
+  const updatedNavigation = navigation.map((item) => ({
     ...item,
     current: pathname === item.href,
   }));
@@ -48,7 +75,11 @@ export default function Navbar1() {
       */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
-          <Dialog as="div" className="fixed inset-0 flex z-40 md:hidden" onClose={setSidebarOpen}>
+          <Dialog
+            as="div"
+            className="fixed inset-0 flex z-40 md:hidden"
+            onClose={setSidebarOpen}
+          >
             <Transition.Child
               as={Fragment}
               enter="transition-opacity ease-linear duration-300"
@@ -86,7 +117,10 @@ export default function Navbar1() {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
-                      <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                      <XMarkIcon
+                        className="h-6 w-6 text-white"
+                        aria-hidden="true"
+                      />
                     </button>
                   </div>
                 </Transition.Child>
@@ -104,12 +138,17 @@ export default function Navbar1() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600',
-                          'group flex items-center px-2 py-2 text-base font-medium rounded-md'
+                          item.current
+                            ? "bg-indigo-800 text-white"
+                            : "text-indigo-100 hover:bg-indigo-600",
+                          "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                         )}
                         onClick={() => setSidebarOpen(false)}
                       >
-                        <item.icon className="mr-4 flex-shrink-0 h-6 w-6 text-indigo-300" aria-hidden="true" />
+                        <item.icon
+                          className="mr-4 flex-shrink-0 h-6 w-6 text-indigo-300"
+                          aria-hidden="true"
+                        />
                         {item.name}
                       </Link>
                     ))}
@@ -133,8 +172,8 @@ export default function Navbar1() {
                 src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
                 alt="Workflow"
               /> */}
-              <div className='text-indigo-50 font-thin text-3xl'>
-                Kirana Assistant
+              <div className="text-indigo-50 font-thin text-3xl">
+                Ettarra Coffee
               </div>
             </div>
             <div className="mt-5 flex-1 flex flex-col">
@@ -144,12 +183,17 @@ export default function Navbar1() {
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                       item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600',
-                      'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                      item.current
+                        ? "bg-indigo-800 text-white"
+                        : "text-indigo-100 hover:bg-indigo-600",
+                      "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                     )}
                     onClick={() => setSidebarOpen(false)}
                   >
-                    <item.icon className="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" aria-hidden="true" />
+                    <item.icon
+                      className="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300"
+                      aria-hidden="true"
+                    />
                     {item.name}
                   </Link>
                 ))}
@@ -171,5 +215,5 @@ export default function Navbar1() {
         </div>
       </div>
     </>
-  )
+  );
 }
