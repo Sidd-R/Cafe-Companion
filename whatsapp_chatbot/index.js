@@ -1,6 +1,7 @@
 const qrcode = require("qrcode-terminal");
 const fs = require("fs");
 const { storeOrder } = require("./storeSQL");
+const pdfGen = require("./mail");
 
 const {
   Client,
@@ -28,7 +29,7 @@ client.on("ready", () => {
 });
 
 client.on("message", async (message) => {
-//   console.log(message.body);
+  //   console.log(message.body);
 
   // Send basic message
   if (message.body === "!ping") {
@@ -62,14 +63,36 @@ client.on("message", async (message) => {
     await message.reply(new Location(19.1014, 72.8274, "Ettarra Coffee House"));
   }
 
+  // Send pdf
+  if (message.body === "!pdf") {
+    const pdf = MessageMedia.fromFilePath("invoices/resume.pdf");
+    await client.sendMessage(message.from, pdf, { caption: "Your resume" });
+  }
+
   if (message.body.startsWith("!order")) {
     const from = message.from.split("@")[0];
     const order = from + " " + message.body.split(" ").slice(1).join(" ");
     await message.reply(`Order received from: ${order}`);
     const json_data = spawner("python", ["llm.py", order]);
-    json_data.stdout.on("data", (data) => {
+    json_data.stdout.on("data", async (data) => {
       temp = data.toString();
       storeOrder(temp);
+      const processItems = () => {
+        temp = JSON.parse(temp);
+        temp.items.forEach((item) => {
+          item.unit_cost = 270;
+          delete item.type;
+        });
+      };
+      processItems();
+      // console.log(temp);
+      temp = JSON.stringify(temp);
+      const pdfPath = pdfGen(temp).then((pdfPath) => {
+        const pdf = MessageMedia.fromFilePath(pdfPath);
+        client.sendMessage(message.from, pdf, "Your invoice is ready!");
+      });
+      // const pdf = MessageMedia.fromFilePath(pdfPath);
+      // await client.sendMessage(message.from, pdf, "Your invoice is ready!");
     });
   }
 });
