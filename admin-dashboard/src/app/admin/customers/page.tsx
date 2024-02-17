@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import 'chart.js/auto';
+import Improvements from "@/components/Improvements";
 
 const ratingsData = {
   '2024-02-14': 5.0,
@@ -70,8 +71,8 @@ const Sales = () => {
   };
 
   return (
-    <div className="md:pl-64 flex flex-col items-center">
-      <div className="mt-8 w-[900px]">
+    <div className="md:pl-64 flex flex-row items-center justify-evenly pr-8 pt-8">
+      <div className="mt-8 w-[700px]">
         <h2 className="text-2xl font-semibold mb-4">Ratings Over Time</h2>
         <div className="bg-white p-4 ">
           <Line data={chartData} options={chartOptions} />
@@ -93,6 +94,7 @@ const Sales = () => {
           </div>
         </div>
       </div>
+      <Improvements />
     </div>
   );
 };

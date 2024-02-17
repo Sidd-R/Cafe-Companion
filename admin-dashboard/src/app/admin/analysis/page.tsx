@@ -15,6 +15,8 @@ import {
   Filler,
 } from "chart.js";
 import Forecast from "@/components/Forecast";
+import Histogram from "@/components/Histogram";
+import PieChart from "@/components/PieChart";
 
 const testData = [
   { testNo: 1, score: 80 },
@@ -150,6 +152,10 @@ const AnalysisPage = () => {
           ))}
         </select>
       </div> */}
+      <div className="flex flex-row items-center w-[100%] justify-evenly px-10">
+        <Histogram />
+        <PieChart />
+      </div>
       <div
         style={{
           width: "1000px",
