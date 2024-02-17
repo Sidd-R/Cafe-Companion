@@ -22,25 +22,11 @@ import ShopScreen from './pages/ShopScreen';
 import AppNavigation from './pages/AppNavigation';
 import SearchScreen from './pages/SearchScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  React.useEffect(() => {
-    setTimeout(() => {
-      SplashScreen.hide();
-    }, 2000);
-  }, []);
-
-  return (
-    <View style={styles.sectionContainer}>
-      <Text style={[styles.sectionTitle]}>{title}</Text>
-      <Text style={[styles.sectionDescription]}>{children}</Text>
-    </View>
-  );
-}
 
 export type AuthStackParamList = {
   HOME: undefined;
@@ -57,16 +43,21 @@ function App(): React.JSX.Element {
     flex: 1,
   };
 
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }, []);
+
   return (
     <>
-      <SafeAreaView style={backgroundStyle}>
-        <AuthStack.Navigator screenOptions={{headerShown: false}}>
-          <AuthStack.Screen name="HOME" component={HomeScreen} />
-          <AuthStack.Screen name="APP" component={AppNavigation} />
-          <AuthStack.Screen name="SHOP" component={ShopScreen} />
-          <AuthStack.Screen name="SEARCH" component={SearchScreen} />
-        </AuthStack.Navigator>
-      </SafeAreaView>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <SafeAreaView style={backgroundStyle}>
+          <AuthStack.Navigator screenOptions={{headerShown: false}}>
+            <AuthStack.Screen name="APP" component={AppNavigation} />
+          </AuthStack.Navigator>
+        </SafeAreaView>
+      </GestureHandlerRootView>
     </>
   );
 }
