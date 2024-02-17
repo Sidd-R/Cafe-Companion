@@ -1,8 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import GoogleMapReact from "google-map-react";
-import Marker from "@/components/Marker";
+import {
+  APIProvider,
+  Map,
+  Marker,
+  InfoWindow,
+} from "@vis.gl/react-google-maps";
 
+// Define the Restaurant interface
 interface Restaurant {
   id: number;
   name: string;
@@ -14,10 +19,12 @@ interface Restaurant {
   weaknesses: string[];
 }
 
+// Define the MapComponent functional component
 const MapComponent: React.FC = () => {
   const defaultCenter = { lat: 37.7749, lng: -122.4194 }; // Example coordinates for San Francisco
   const defaultZoom = 15;
 
+  // Define an array of restaurants
   const restaurants: Restaurant[] = [
     {
       id: 1,
@@ -42,56 +49,93 @@ const MapComponent: React.FC = () => {
     // Add other restaurants here
   ];
 
+  // Define state to keep track of the selected restaurant
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<Restaurant | null>(null);
 
-  const handleMarkerClick = (restaurant: Restaurant) => {
-    console.log("Restaurant clicked:", restaurant);
-    setSelectedRestaurant(restaurant);
+  // Define state to control the display of the comparison panel
+  const [showComparisonPanel, setShowComparisonPanel] = useState(false);
+
+  // Function to handle the button click and show the comparison panel
+  const handleComparisonButtonClick = () => {
+    setShowComparisonPanel(true);
   };
 
   return (
-    <div className="md:pl-64">
-      <div style={{ height: "700px", width: "100%" }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{
-            key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
-          }}
-          defaultCenter={defaultCenter}
-          defaultZoom={defaultZoom}
-        >
-          {restaurants.map((restaurant) => (
-            <Marker
-              key={restaurant.id}
-              lat={restaurant.latitude}
-              lng={restaurant.longitude}
-              onClick={() => handleMarkerClick(restaurant)}
-            />
-          ))}
+    <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
+      <div className="md:pl-64 relative">
+        <div style={{ height: "700px", width: "100%" }}>
+          <Map zoom={defaultZoom} center={defaultCenter}>
+            {restaurants.map((restaurant) => (
+              <Marker
+                key={restaurant.id}
+                position={{
+                  lat: restaurant.latitude,
+                  lng: restaurant.longitude,
+                }}
+                onClick={() => setSelectedRestaurant(restaurant)}
+                clickable={true}
+              />
+            ))}
 
-          {selectedRestaurant && (
-            <div
-              style={{
-                position: "absolute",
-                top: selectedRestaurant.latitude,
-                left: selectedRestaurant.longitude,
-                backgroundColor: "white",
-                padding: "10px",
-                border: "1px solid black",
-                zIndex: 1,
-              }}
-            >
-              <h3>{selectedRestaurant.name}</h3>
-              <p>{selectedRestaurant.additionalData}</p>
-              <p>Rating: {selectedRestaurant.rating}</p>
-              <p>Strengths: {selectedRestaurant.strengths.join(", ")}</p>
-              <p>Weaknesses: {selectedRestaurant.weaknesses.join(", ")}</p>
+            {selectedRestaurant && (
+              <InfoWindow
+                position={{
+                  lat: selectedRestaurant.latitude,
+                  lng: selectedRestaurant.longitude,
+                }}
+                onClose={() => setSelectedRestaurant(null)}
+              >
+                <div className="p-4">
+                  {/* Display only the name of the selected restaurant */}
+                  <h3 className="font-bold text-lg">
+                    {selectedRestaurant.name}
+                  </h3>
+                  {/* Add a button to open the comparison panel */}
+                  <button
+                    onClick={handleComparisonButtonClick}
+                    className="mt-4 p-2 bg-blue-600 text-white rounded-sm"
+                  >
+                    View Comparison
+                  </button>
+                </div>
+              </InfoWindow>
+            )}
+          </Map>
+
+          {/* Glassmorphism comparison panel */}
+          {showComparisonPanel && (
+            <div className="glassmorphism absolute right-4 z-10 top-4 backdrop-blur-lg rounded-md overflow-hidden border border-gray-300">
+              <div className="p-4 font-semibold text-blue-700">
+                <h3 className="text-xl mb-2">
+                  Comparison with {selectedRestaurant?.name}
+                </h3>
+                <div className="mb-2">
+                  <span className="text-gray-900">Rating:</span>{" "}
+                  {selectedRestaurant?.rating}
+                </div>
+                <div className="mb-2">
+                  <span className="text-gray-900">Strengths:</span>{" "}
+                  {selectedRestaurant?.strengths.join(", ")}
+                </div>
+                <div className="mb-2">
+                  <span className="text-gray-900">Weaknesses:</span>{" "}
+                  {selectedRestaurant?.weaknesses.join(", ")}
+                </div>
+                <button
+                  className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300"
+                  onClick={() => setShowComparisonPanel(false)}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           )}
-        </GoogleMapReact>
+        </div>
       </div>
-    </div>
+    </APIProvider>
   );
 };
 
+// Export the MapComponent
 export default MapComponent;

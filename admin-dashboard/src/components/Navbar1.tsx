@@ -44,6 +44,12 @@ const navigation = [
     icon: InboxIcon,
     current: false,
   },
+  {
+    name: "Sales",
+    href: "/admin/sales",
+    icon: CalendarIcon,
+    current: false,
+  }
 ];
 
 function classNames(...classes: string[]) {
