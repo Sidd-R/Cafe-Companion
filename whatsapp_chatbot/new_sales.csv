@@ -1,0 +1,301 @@
+Timestamp,Order_type,Item_name,Quantity,Total,Category,Customer_Name
+2024-01-24 02:12:06,Dine In,Rosella Jam With Filter Coffee Ganache Macaroon (2 PCS),1,164.29,SEASONAL MENU,Naishar
+2024-01-15 00:08:21,Dine In,Madagascar Chocochip Frappe (350 ML),1,366.91,Cold Coffee,anish
+2024-01-26 09:43:20,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,kosha
+2024-01-21 22:27:16,Delivery(Parcel),Yellow Banana Chips 60 Gm,1,72.48,Food Menu,Heta Bhatia
+2024-01-12 09:55:21,Dine In,Madagascar Chocochip Frappe (450 ML),1,410.71,Cold Coffee,
+2024-01-08 00:34:58,Dine In,Cafe Mocha (250 ML),2,437.72,Hot Coffee,Vanshika Agarwal
+2024-01-16 05:04:16,Delivery(Parcel),Iced Americano (450 ML),1,275.0,Cold Coffee,SWIGGY
+2024-01-25 23:23:38,Dine In,Flat White 250 Ml,1,262.85,Hot Coffee,
+2024-01-02 03:43:06,Pick Up,Madagascar Chocochip Frappe (450 ML),1,390.01,Cold Coffee,saket singhania
+2024-01-13 11:16:52,Pick Up,Iced Latte (350 ML),1,235.01,Cold Coffee,
+2024-01-23 20:28:52,Dine In,Iced Latte (350 ML),1,246.44,Cold Coffee,vatsal/9821554200
+2024-01-26 16:39:43,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,
+2024-01-31 20:54:49,Dine In,Almond Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-02 20:22:21,Dine In,South Indian Filter Kaapi (150 ML),3,459.99,Hot Coffee,prdeep
+2024-01-26 03:20:33,Dine In,Cappucino (350 ML),2,547.64,Hot Coffee,sanket rathod
+2024-01-21 00:52:30,Dine In,Gluten Free Hazelnut Brownie,2,372.38,Sweet,
+2024-01-25 20:22:02,Dine In,Baked Vada Pav,1,87.61,Food Menu,
+2024-01-28 19:40:13,Pick Up,Classic Frappe (450 ML),1,335.01,Cold Coffee,
+2024-01-16 09:18:54,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,
+2024-01-20 10:05:37,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,
+2024-01-03 11:36:51,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,
+2024-01-22 01:42:30,Dine In,Hazelnut Frappe (350 ML),1,334.05,Cold Coffee,shashank
+2024-01-02 02:11:53,Dine In,Madagascar Chocochip Frappe (350 ML),1,366.92,Cold Coffee,sanket rathod
+2024-01-02 16:14:30,Dine In,Berliners (Dark Choco Mousse Berliner),1,76.68,Food Menu,
+2024-01-05 16:50:46,Pick Up,Flat White 250 Ml,1,239.99,Hot Coffee,
+2024-01-12 22:02:09,Dine In,Caramel Frappe (350 ML),1,350.48,Cold Coffee,khushiiiiiii
+2024-01-15 14:26:33,Dine In,Irish Americano (350 ML),1,273.81,Hot Coffee,
+2024-01-03 22:33:59,Dine In,Mix Tartlet 3 Pcs (Filter Kaapi Tartlet),1,49.29,Food Menu,hasrh
+2024-01-01 21:36:31,Dine In,Berliners (Nutella Berliner),1,76.68,Food Menu,
+2024-01-22 11:12:11,Delivery(Parcel),Iced Americano (450 ML),1,275.0,Cold Coffee,SWIGGY
+2024-01-13 01:29:35,Dine In,Gluten Free Hazelnut Brownie,1,186.19,Sweet,
+2024-01-12 16:42:36,Pick Up,Origanal South Indian Frappe (350 ML),3,900.0,Cold Coffee,SaiRaj Sir
+2024-01-20 00:36:04,Dine In,Plain Nankhatai Veg,1,285.71,Sweet,KABIR
+2024-01-21 10:25:05,Dine In,ESPRESSO (60 ML),1,175.24,Hot Coffee,
+2024-01-25 02:07:49,Dine In,Madagascar Chocochip Frappe (350 ML),1,276.64,Cold Coffee,sanket rathod
+2024-01-26 00:38:57,Dine In,Nariyal Irish Cream Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-13 00:55:01,Delivery(Parcel),Classic Frappe (450 Ml),1,315.75,Cold Coffee,Zenith Corporation
+2024-01-29 23:26:03,Dine In,Rosella Jam With Filter Coffee Ganache Macaroon (1 PIC),1,87.61,SEASONAL MENU,
+2024-01-12 23:32:35,Dine In,Madagascar Hot Chocolate (250 ML),2,657.14,Hot Chocolate,
+2024-01-04 23:49:31,Dine In,Irish Americano (250 ML),1,246.44,Hot Coffee,koyel
+2024-01-06 17:18:03,Dine In,Almond Frappe (350 ML),1,334.05,Cold Coffee,shivani
+2024-01-23 23:02:27,Delivery(Parcel),Iced Americano (450 ML),1,275.0,Cold Coffee,SWIGGY
+2024-01-13 00:15:23,Dine In,Vietnamese (450 ML),1,383.32,Cold Coffee,VERONII
+2024-01-07 18:32:01,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,pupul
+2024-01-27 00:32:25,Dine In,Hyderabadi Chicken Keema Pav,1,87.61,Food Menu,
+2024-01-25 15:47:29,Dine In,South Indian Filter Kaapi (150 ML),1,133.33,Hot Coffee,Vininjay Sir
+2024-01-21 13:08:45,Pick Up,Vanilla Praline (350 ML),1,320.0,Cold Coffee,shubi
+2024-01-09 22:59:40,Delivery(Parcel),Pappa Roti (Add On Nutella sauce),1,206.4,Sweet,SWIGGY
+2024-01-31 15:44:29,Pick Up,Baked Pav Bhaji,1,76.19,Food Menu,vedit photo shoot
+2024-01-04 19:57:48,Pick Up,Coconut Nankhatai (with Egg),1,299.99,Sweet,sunil
+2024-01-08 16:50:13,Delivery(Parcel),Vietnamese (450 ML),1,454.99,Cold Coffee,SWIGGY
+2024-01-03 17:23:05,Delivery(Parcel),Madagascar Chocochip Frappe (350 Ml),1,412.98,Cold Coffee,Hrutik Shah
+2024-01-20 13:02:48,Dine In,Kaapicino (250 ML),1,235.48,Hot Coffee,Guari
+2024-01-28 22:49:00,Dine In,Iced Americano (350 ML),1,202.61,Cold Coffee,Shubhum Shah
+2024-01-20 23:55:30,Dine In,Americano (250 ML),1,202.61,Hot Coffee,
+2024-01-04 17:48:38,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,shyashi
+2024-01-31 23:22:40,Dine In,Iced Americano (350 ML),1,202.61,Cold Coffee,Adhiraj
+2024-01-18 17:08:18,Dine In,Baked Vada Pav,1,76.19,Food Menu,kundan
+2024-01-13 02:20:16,Pick Up,Hazelnut Frappe (350 ML),2,640.0,Cold Coffee,SHUBHAAAMM/mommyyyy
+2024-01-20 02:09:10,Dine In,Hazelnut Frappe (350 ML),1,334.05,Cold Coffee,nakksh
+2024-01-03 02:08:33,Pick Up,Sea Salt Dark Mocha (250 ML),1,285.01,Hot Coffee,aviral
+2024-01-21 02:10:38,Dine In,Baked Vada Pav,1,87.61,Food Menu,
+2024-01-22 23:02:17,Dine In,Madagascar Hot Chocolate (250 ML),1,328.56,Hot Chocolate,
+2024-01-23 12:14:47,Pick Up,Baked Vada Pav,1,76.19,Food Menu,Sabina /7021105769
+2024-01-21 00:52:30,Dine In,Vietnamese (450 ML),1,383.32,Cold Coffee,
+2024-01-18 18:29:59,Dine In,Americano (350 ML),1,230.0,Hot Coffee,charit
+2024-01-22 03:07:15,Pick Up,Spicy Banana Chips 60 Gm,1,60.0,Food Menu,
+2024-01-22 23:43:28,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,ayra
+2024-01-06 00:56:40,Dine In,Madagascar Hot Chocolate (350 ML),2,766.67,Hot Chocolate,jinesh
+2024-01-26 22:07:43,Dine In,MANGO JUICE,1,328.56,JUICES,raahil
+2024-01-22 02:08:07,Dine In,Cappucino (250 ML),1,246.44,Hot Coffee,shashank
+2024-01-28 01:02:41,Dine In,Tartlets (Filter Kaapi Tartlet),1,54.76,Food Menu,
+2024-01-24 20:32:31,Dine In,Sea Salt Dark Mocha (250 ML),1,301.19,Hot Coffee,bhavin doshi
+2024-01-24 18:53:58,Dine In,Cafe Mocha (250 ML),1,257.39,Hot Coffee,rohan
+2024-01-03 19:19:19,Dine In,Macchiato 30 Ml,1,158.81,Hot Coffee,akshat
+2024-01-27 23:20:45,Dine In,Calzones Veg (Calzone Paneer),1,76.68,Food Menu,pranay jain
+2024-01-10 01:45:10,Dine In,Madagascar Hot Chocolate (250 ML),1,285.71,Hot Chocolate,Vininjay Sir
+2024-01-23 16:10:28,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,
+2024-01-03 11:54:08,Dine In,Almond Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-07 18:41:11,Pick Up,Add On Syrup (Add On Cinnamon Syrup),1,50.0,Extra Toppings,ankit
+2024-01-18 18:16:19,Dine In,Berliners (Nutella Berliner),1,76.68,Food Menu,
+2024-01-31 23:56:02,Dine In,Vietnamese (350 ML),1,334.05,Cold Coffee,yashvi
+2024-01-01 17:44:24,Dine In,Iced Latte (350 ML),1,246.44,Cold Coffee,
+2024-01-16 17:22:36,Dine In,Vietnamese (350 ML),1,290.48,Cold Coffee,SaiRaj Sir
+2024-01-08 21:35:26,Dine In,Baked Vada Pav,1,87.61,Food Menu,
+2024-01-25 18:51:50,Dine In,Chicken Calzone,1,76.68,Food Menu,
+2024-01-07 04:40:43,Dine In,Classic Frappe (350 ML),1,261.9,Cold Coffee,Babu Anna Sir
+2024-01-21 03:11:05,Dine In,Cappucino (250 ML),1,246.44,Hot Coffee,tejas patel
+2024-01-27 20:15:20,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,
+2024-01-07 16:37:35,Dine In,South Indian Filter Kaapi (250 ML),1,176.19,Hot Coffee,allah baksh
+2024-01-18 20:52:18,Dine In,Berliners (Nutella Berliner),2,153.32,Food Menu,
+2024-01-21 17:13:54,Dine In,Iced Mocha (350 ML),1,312.15,Cold Coffee,
+2024-01-18 17:19:08,Delivery(Parcel),Cappucino (250 Ml),1,274.63,Hot Coffee,Rohansh Balsari
+2024-01-25 02:59:54,Dine In,Hyderabadi Chicken Keema Pav,2,175.24,Food Menu,nitin m
+2024-01-26 18:39:42,Pick Up,Add On Syrup (Add On Irish Syrup),1,50.0,Extra Toppings,
+2024-01-28 16:57:54,Pick Up,Cafe Mocha (350 ML),1,275.0,Hot Coffee,
+2024-01-06 15:28:54,Dine In,Kaapicino (250 ML),1,235.48,Hot Coffee,ananya
+2024-01-23 00:11:08,Delivery(Parcel),Iced Americano (450 ML),1,275.0,Cold Coffee,SWIGGY
+2024-01-17 13:28:37,Delivery(Parcel),Irish Americano (250 Ml),1,229.75,Hot Coffee,Harshil Bohra
+2024-01-03 23:23:15,Dine In,Iced Americano (350 ML),2,405.24,Cold Coffee,
+2024-01-12 16:08:18,Dine In,Cappucino (250 ML),1,246.44,Hot Coffee,
+2024-01-24 00:10:37,Dine In,Vietnamese (350 ML),1,334.05,Cold Coffee,Pratham
+2024-01-12 07:39:37,Dine In,Choco-crinkle-cookies (COMBO 3 PCS),1,76.68,Sweet,saket singhania
+2024-01-28 01:58:39,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-15 21:16:28,Dine In,Tartlets (Salted Caramel Tartlet),1,54.76,Food Menu,
+2024-01-11 02:00:42,Dine In,Choco-crinkle-cookies (COMBO 3 PCS),1,76.68,Sweet,amol
+2024-01-09 16:22:32,Dine In,Classic Frappe (450 ML),1,350.48,Cold Coffee,pratik
+2024-01-18 06:11:51,Delivery(Parcel),Irish Americano (350 Ml),1,241.25,Hot Coffee,Lakshya Raj Anand
+2024-01-16 01:28:51,Dine In,Iced Mocha (350 ML),1,312.15,Cold Coffee,gautam
+2024-01-20 13:04:18,Dine In,Americano (250 ML),1,176.19,Hot Coffee,sujay sir
+2024-01-01 02:50:49,Dine In,Madagascar Hot Chocolate (350 ML),1,383.32,Hot Chocolate,Sachin Mehta
+2024-01-12 20:06:28,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,sidhanth sharma/daddy
+2024-01-30 18:39:08,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,
+2024-01-09 15:55:50,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,natasha
+2024-01-29 20:06:40,Dine In,Mix Tartlet 3 Pcs (chocolate Tartlet),1,49.29,Food Menu,
+2024-01-09 14:11:20,Dine In,Baked Vada Pav,1,87.61,Food Menu,anezka
+2024-01-27 18:45:48,Pick Up,Cold Brew,1,315.0,Manual Brew,
+2024-01-04 17:38:19,Dine In,Berliners (Nutella Berliner),1,76.68,Food Menu,gauri
+2024-01-17 01:17:51,Dine In,Papparoti (Add On Nutella sauce),1,233.33,Sweet,nischal/guest complimentry
+2024-01-21 14:04:52,Pick Up,Baked Vada Pav,2,160.0,Food Menu,
+2024-01-23 19:25:24,Dine In,South Indian Filter Kaapi (150 ML),1,133.33,Hot Coffee,allah baksh
+2024-01-13 07:16:32,Dine In,Nariyal Irish Cream Frappe (350 ML),1,334.05,Cold Coffee,RAJ SHAH
+2024-01-08 23:47:34,Dine In,Choco-crinkle-cookies (COMBO 3 PCS),1,76.68,Sweet,Dr.Punjabi
+2024-01-19 19:48:11,Dine In,Tartlets (Filter Kaapi Tartlet),1,54.76,Food Menu,niel
+2024-01-13 17:30:48,Dine In,Origanal South Indian Frappe (350 ML),1,290.48,Cold Coffee,SaiRaj Sir
+2024-01-14 17:24:55,Pick Up,Vietnamese (350 ML),1,320.0,Cold Coffee,
+2024-01-19 09:48:01,Pick Up,Cappucino (250 ML),1,235.01,Hot Coffee,
+2024-01-19 00:17:22,Dine In,Origanal South Indian Frappe (350 ML),1,295.59,Cold Coffee,harsh
+2024-01-03 22:14:53,Pick Up,Iced Americano (350 ML),1,189.99,Cold Coffee,
+2024-01-20 14:53:35,Dine In,Strawberry White Chocolate Ganache With Rosella Jam Macaroon,3,228.57,SEASONAL MENU,Dhananjay Sir
+2024-01-03 21:01:59,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,shubah
+2024-01-13 18:03:53,Pick Up,Tartlets (Salted Caramel Tartlet),1,47.62,Food Menu,Sabina /7021105769
+2024-01-07 13:30:50,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,tanaya
+2024-01-23 03:23:11,Dine In,Papparoti (Plain),1,191.68,Sweet,Samaira Sandhu
+2024-01-31 21:28:26,Dine In,Berliners (Nutella Berliner),1,76.68,Food Menu,
+2024-01-21 11:42:52,Delivery(Parcel),Cappucino (250 ML),1,250.12,Hot Coffee,SWIGGY
+2024-01-19 00:22:49,Dine In,Baked Pav Bhaji,3,232.51,Food Menu,shanky
+2024-01-20 01:24:32,Dine In,Hazelnut Frappe (350 ML),1,334.05,Cold Coffee,ARNAV/9588263699
+2024-01-06 17:12:35,Delivery(Parcel),Cafe Mocha (350 Ml),1,277.0,Hot Coffee,Abhishek Nandal
+2024-01-18 01:33:12,Pick Up,Hazelnut Frappe (350 ML),1,320.0,Cold Coffee,parin
+2024-01-11 22:40:55,Dine In,Calzones Veg (Calzone Paneer),1,76.68,Food Menu,
+2024-01-28 19:28:32,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-22 00:31:59,Dine In,Rosella Jam With Filter Coffee Ganache Macaroon (3 PCS),1,230.0,SEASONAL MENU,KRUNAL
+2024-01-31 22:54:49,Dine In,Choco-crinkle-cookies (COMBO 3 PCS),1,76.68,Sweet,kunal
+2024-01-25 15:49:56,Dine In,ALMOND MILK (200 ML),1,85.71,Milk,Dhananjay Sir
+2024-01-16 22:24:20,Pick Up,Spicy Banana Chips 60 Gm,2,120.0,Food Menu,
+2024-01-05 12:35:10,Delivery(Parcel),Baked Vada Pav,3,140.0,Food Menu,Ananya Gupta
+2024-01-06 23:11:17,Dine In,Papparoti (Plain),1,191.68,Sweet,rudrangshu
+2024-01-18 11:45:07,Delivery(Parcel),South Indian Filter Kaapi (250 ML),1,204.67,Hot Coffee,SWIGGY
+2024-01-10 02:00:34,Dine In,Berliners (Blueberry Cheese Cake Berliner),1,76.68,Food Menu,RAJ SHAH
+2024-01-24 21:25:19,Dine In,Cappucino (250 ML),2,492.85,Hot Coffee,advik
+2024-01-27 10:22:41,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,
+2024-01-12 19:13:58,Dine In,Papparoti (Plain),1,191.68,Sweet,
+2024-01-18 00:59:43,Dine In,Berliners (Nutella Berliner),1,76.68,Food Menu,
+2024-01-28 17:52:37,Dine In,Berliner Mix 3 Pcs (Nutella Berliner),1,65.71,Food Menu,khushal
+2024-01-21 15:42:55,Pick Up,Almond Frappe (350 ML),1,320.0,Cold Coffee,Magha
+2024-01-23 14:19:45,Pick Up,ALMOND MILK (200 ML),2,180.0,Milk,
+2024-01-15 02:03:50,Dine In,Bon Bon (450 ML),1,383.32,Cold Coffee,
+2024-01-29 20:47:43,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-13 09:06:31,Dine In,Cappucino (250 ML),1,246.44,Hot Coffee,
+2024-01-11 13:54:55,Dine In,Sea Salt Dark Mocha Frappe (350 ML),1,383.32,Cold Coffee,
+2024-01-02 09:34:20,Pick Up,Almond Frappe (350 ML),1,320.0,Cold Coffee,
+2024-01-25 02:02:18,Dine In,Baked Vada Pav,3,262.85,Food Menu,
+2024-01-18 23:08:59,Dine In,Berliner Mix 3 Pcs (Blueberry Cheese Cake Berliner),1,65.71,Food Menu,anurag
+2024-01-20 01:25:00,Delivery(Parcel),Origanal South Indian Frappe (350 Ml),1,294.75,Cold Coffee,Somil Jain
+2024-01-20 23:24:59,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,shruti
+2024-01-10 01:59:38,Dine In,Tartlets (Filter Kaapi Tartlet),1,54.76,Food Menu,nitin m
+2024-01-19 16:33:32,Dine In,Baked Vada Pav,1,87.61,Food Menu,
+2024-01-10 23:45:20,Delivery(Parcel),Flat White 250 Ml,1,240.0,Hot Coffee,Aluzma
+2024-01-28 00:00:55,Dine In,Berliners (Dark Choco Mousse Berliner),1,76.68,Food Menu,
+2024-01-19 20:51:45,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,
+2024-01-28 21:00:57,Pick Up,Iced Americano (350 ML),1,189.99,Cold Coffee,
+2024-01-02 23:56:37,Dine In,Iced Americano (350 ML),1,202.61,Cold Coffee,nitin m
+2024-01-12 16:58:55,Pick Up,Iced Latte (350 ML),1,235.01,Cold Coffee,
+2024-01-01 09:22:33,Dine In,Tartlets (Kacha Nimbu Tartlet),1,54.76,Food Menu,
+2024-01-21 11:30:56,Pick Up,Sea Salt Dark Mocha Frappe (350 ML),1,349.99,Cold Coffee,aashna
+2024-01-19 01:35:48,Dine In,Cappucino (250 ML),1,246.44,Hot Coffee,
+2024-01-10 01:49:48,Dine In,Madagascar Chocochip Frappe (350 ML),1,181.36,Cold Coffee,sanket rathod
+2024-01-06 14:23:21,Dine In,Classic Frappe (350 ML),1,301.19,Cold Coffee,tina
+2024-01-07 22:18:19,Dine In,South Indian Filter Kaapi (150 ML),2,306.68,Hot Coffee,
+2024-01-17 07:09:47,Pick Up,ALMOND MILK (200 ML),2,180.0,Milk,SHUBHAAAMM/mommyyyy
+2024-01-27 22:20:28,Pick Up,Rosella Jam With Filter Coffee Ganache Macaroon (3 PCS),1,210.0,SEASONAL MENU,
+2024-01-07 14:53:17,Dine In,Nariyal Irish Cream Frappe (350 ML),1,334.05,Cold Coffee,Siddhart
+2024-01-05 17:22:55,Dine In,Rosella Jam With Filter Coffee Ganache Macaroon (1 PIC),1,87.61,SEASONAL MENU,
+2024-01-30 22:06:16,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,
+2024-01-31 23:14:46,Dine In,Hyderabadi Chicken Keema Pav,1,76.19,Food Menu,Nagesh Anna
+2024-01-27 03:03:13,Dine In,Classic Frappe (350 ML),2,242.49,Cold Coffee,SHUBHAAAMM/mommyyyy
+2024-01-21 23:41:59,Dine In,ALMOND MILK (200 ML),2,197.14,Milk,
+2024-01-19 17:27:21,Dine In,Baked Pav Bhaji,1,87.61,Food Menu,
+2024-01-14 16:21:24,Pick Up,Origanal South Indian Frappe (350 ML),1,315.0,Cold Coffee,
+2024-01-14 09:09:00,Delivery(Parcel),Cappucino (250 ML),2,590.0,Hot Coffee,SWIGGY
+2024-01-12 23:03:47,Dine In,Madagascar Chocochip Frappe (350 ML),1,366.92,Cold Coffee,nitin m
+2024-01-16 00:34:33,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,
+2024-01-18 02:35:24,Dine In,Chicken Calzone,1,76.68,Food Menu,
+2024-01-07 18:36:26,Pick Up,Almond Honey Latte (350 ML),1,310.0,Hot Coffee,
+2024-01-15 17:03:33,Dine In,Origanal South Indian Frappe (350 ML),2,580.96,Cold Coffee,Babu Anna Sir
+2024-01-06 00:29:50,Dine In,Malnad Tonic (choice Of Tonic),1,0.17,Coffee Coolers,vatsal/9821554200
+2024-01-12 10:03:59,Pick Up,South Indian Filter Kaapi (250 ML),1,189.99,Hot Coffee,Rashi Dr
+2024-01-04 19:20:16,Pick Up,Origanal South Indian Frappe (450 ML),1,365.0,Cold Coffee,
+2024-01-26 03:20:33,Dine In,Strawberry White Chocolate Ganache With Rosella Jam Macaroon,1,87.61,SEASONAL MENU,sanket rathod
+2024-01-11 18:07:28,Dine In,Madagascar Chocochip Frappe (350 ML),1,366.92,Cold Coffee,hanshuka
+2024-01-03 17:02:10,Dine In,Baked Vada Pav,1,87.61,Food Menu,viashal
+2024-01-13 21:30:13,Dine In,Origanal South Indian Frappe (350 ML),2,668.09,Cold Coffee,
+2024-01-22 02:08:07,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,shashank
+2024-01-27 13:22:27,Pick Up,Classic Frappe (450 ML),2,670.0,Cold Coffee,
+2024-01-09 23:25:25,Dine In,Cappucino (250 ML),1,246.44,Hot Coffee,punneet
+2024-01-29 00:06:28,Pick Up,Mix Berliner 2 Pcs (Nutella Berliner),1,65.0,Food Menu,shreya
+2024-01-26 13:54:26,Dine In,Vietnamese (350 ML),1,334.05,Cold Coffee,
+2024-01-26 17:42:30,Pick Up,Classic Frappe (450 ML),1,335.01,Cold Coffee,
+2024-01-27 22:31:05,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-28 14:35:43,Pick Up,Papparoti (Plain),1,175.01,Sweet,
+2024-01-26 09:43:20,Dine In,Berliners (Blueberry Cheese Cake Berliner),1,76.68,Food Menu,kosha
+2024-01-03 20:59:29,Dine In,Almond Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-21 09:37:39,Dine In,ESPRESSO (60 ML),2,350.48,Hot Coffee,
+2024-01-11 13:58:16,Pick Up,Wild Chikmanglur 250 GM,1,525.0,Coffee Beans,
+2024-01-07 21:53:08,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,
+2024-01-25 02:02:02,Dine In,Caramel Frappe (450 ML),1,399.76,Cold Coffee,harsh
+2024-01-16 19:52:55,Dine In,Sea Salt Dark Mocha (250 ML),1,301.19,Hot Coffee,aathya
+2024-01-10 01:18:53,Dine In,Vietnamese (350 ML),1,334.05,Cold Coffee,amol
+2024-01-13 19:48:23,Dine In,Classic Frappe (350 ML),2,602.39,Cold Coffee,
+2024-01-24 00:20:55,Dine In,Vietnamese (350 ML),1,334.05,Cold Coffee,adish shah
+2024-01-20 00:54:43,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,SIDI SHAH
+2024-01-26 22:54:06,Dine In,Origanal South Indian Frappe (450 ML),2,766.68,Cold Coffee,gupta
+2024-01-11 23:31:15,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,Manas
+2024-01-03 23:20:50,Dine In,Cafe Latte (250 ML),1,246.44,Hot Coffee,devem
+2024-01-27 22:52:21,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,
+2024-01-28 19:52:22,Dine In,Choco-crinkle-cookies (COMBO 3 PCS),1,76.68,Sweet,
+2024-01-13 17:25:13,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,saurabh
+2024-01-15 21:56:50,Dine In,Iced Latte (450 ML),1,55.31,Cold Coffee,khushiiiiiii
+2024-01-07 02:55:34,Pick Up,Berliners (Lotus Biscoff Berliner),1,79.99,Food Menu,
+2024-01-28 21:25:50,Delivery(Parcel),Baked Pav Bhaji,1,40.0,Food Menu,Medha Kirti
+2024-01-04 01:12:06,Dine In,Vietnamese (450 ML),1,383.32,Cold Coffee,kahaan
+2024-01-23 14:40:50,Dine In,Mix Tartlet 3 Pcs (salted Caramel tartlet),1,49.29,Food Menu,
+2024-01-17 00:11:44,Dine In,Origanal South Indian Frappe (350 ML),2,668.1,Cold Coffee,jainam
+2024-01-13 19:10:15,Dine In,Kaapicino (250 ML),1,235.48,Hot Coffee,
+2024-01-31 02:27:39,Pick Up,Madagascar Chocochip Frappe (450 ML),1,390.01,Cold Coffee,sanket rathod
+2024-01-13 00:28:13,Dine In,Papparoti (Plain),1,191.68,Sweet,
+2024-01-11 12:15:16,Pick Up,Almond Frappe (350 ML),1,320.0,Cold Coffee,
+2024-01-04 19:27:19,Dine In,Sea Salt Dark Mocha (250 ML),1,301.19,Hot Coffee,
+2024-01-05 18:24:44,Pick Up,Cafe Mocha (250 ML),1,244.99,Hot Coffee,
+2024-01-19 19:48:11,Dine In,Chicken Calzone,1,76.68,Food Menu,niel
+2024-01-24 18:39:34,Dine In,Double Restritto 44 Ml,2,361.44,Hot Coffee,
+2024-01-02 02:03:00,Dine In,Berliners (Dark Choco Mousse Berliner),1,76.68,Food Menu,Anit kishna
+2024-01-26 00:54:16,Pick Up,Berliner Mix 3 Pcs (Nutella Berliner),1,60.0,Food Menu,koma
+2024-01-19 02:56:13,Pick Up,Kaapicino (250 ML),3,675.0,Hot Coffee,sidhanth sharma/daddy
+2024-01-18 12:32:47,Dine In,Vietnamese (450 ML),1,383.32,Cold Coffee,
+2024-01-10 02:18:26,Dine In,Iced Latte (450 ML),1,183.32,Cold Coffee,Naishar
+2024-01-16 18:14:51,Dine In,Sea Salt Dark Mocha Frappe (350 ML),1,383.32,Cold Coffee,jinesh
+2024-01-22 23:57:19,Dine In,Iced Americano (350 ML),1,202.61,Cold Coffee,partham
+2024-01-25 02:16:06,Dine In,Calzones Veg (Calzone Paneer),1,76.68,Food Menu,
+2024-01-29 20:06:40,Dine In,Mix Tartlet 3 Pcs (Kacha Nimbu Tartlet),1,49.29,Food Menu,
+2024-01-17 23:33:03,Dine In,Add On Syrup (Add On Caramel Syrup),1,54.76,Extra Toppings,
+2024-01-17 10:48:51,Pick Up,Americano (350 ML),1,220.0,Hot Coffee,
+2024-01-30 22:06:16,Dine In,Hyderabadi Chicken Keema Pav,1,87.61,Food Menu,
+2024-01-16 17:02:20,Dine In,Cafe Latte (250 ML),1,246.44,Hot Coffee,
+2024-01-20 00:42:59,Dine In,Vietnamese (350 ML),1,334.05,Cold Coffee,
+2024-01-07 22:15:53,Dine In,Sea Salt Dark Mocha Frappe (350 ML),2,766.67,Cold Coffee,
+2024-01-17 22:05:47,Dine In,Hyderabadi Chicken Keema Pav,1,87.61,Food Menu,
+2024-01-24 22:17:28,Pick Up,Rosella Jam With Filter Coffee Ganache Macaroon (1 PIC),1,79.99,SEASONAL MENU,
+2024-01-22 22:36:43,Dine In,Caramel Frappe (350 ML),1,350.48,Cold Coffee,
+2024-01-15 01:34:27,Dine In,Madagascar Hot Chocolate (250 ML),1,328.56,Hot Chocolate,devanshiiiii
+2024-01-03 02:27:36,Pick Up,Baked Vada Pav,1,79.99,Food Menu,
+2024-01-16 13:53:28,Pick Up,Baked Vada Pav,1,80.0,Food Menu,JABBAR\9002495461
+2024-01-04 23:24:15,Delivery(Parcel),Classic Frappe (350 Ml),1,320.78,Cold Coffee,Saumyaa Jaju
+2024-01-11 17:36:34,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,
+2024-01-29 13:33:22,Dine In,Baked Vada Pav,1,87.61,Food Menu,
+2024-01-12 10:08:39,Dine In,Papparoti (Plain),1,166.67,Sweet,JABBAR\9002495461
+2024-01-20 18:03:53,Pick Up,Kaapicino (250 ML),1,225.01,Hot Coffee,
+2024-01-10 20:38:01,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,Kasturi Datar
+2024-01-22 23:02:17,Dine In,Almond Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-05 23:50:55,Dine In,Cappucino (250 ML),1,246.44,Hot Coffee,RAJ SHAH
+2024-01-07 12:59:50,Pick Up,Calzones Veg (Calzone Veg),1,70.01,Food Menu,
+2024-01-16 21:51:13,Dine In,Berliner Mix 3 Pcs (Nutella Berliner),2,131.44,Food Menu,sanjana thakur
+2024-01-24 19:06:51,Dine In,Iced Americano (350 ML),1,202.61,Cold Coffee,
+2024-01-20 11:09:33,Dine In,Baked Vada Pav,1,76.19,Food Menu,Priti
+2024-01-13 01:02:14,Dine In,Madagascar Chocochip Frappe (450 ML),1,410.71,Cold Coffee,harshaaall
+2024-01-30 13:13:11,Dine In,Strawberry White Chocolate Ganache With Rosella Jam Macaroon,1,87.61,SEASONAL MENU,
+2024-01-13 01:02:14,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,harshaaall
+2024-01-18 23:27:54,Dine In,Tartlets (Kacha Nimbu Tartlet),1,54.76,Food Menu,garima
+2024-01-20 20:56:32,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,
+2024-01-08 08:57:32,Pick Up,Cafe Mocha (250 ML),1,244.99,Hot Coffee,vansh
+2024-01-24 23:16:47,Dine In,South Indian Filter Kaapi (150 ML),2,306.68,Hot Coffee,Manali
+2024-01-22 20:24:32,Dine In,South Indian Filter Kaapi (150 ML),2,306.67,Hot Coffee,
+2024-01-28 01:08:49,Dine In,Cafe Latte (350 ML),1,273.81,Hot Coffee,Naishar
+2024-01-17 20:10:12,Dine In,Americano (250 ML),1,202.61,Hot Coffee,
+2024-01-13 00:28:13,Dine In,Hot Chocolate (250 ML),1,295.71,Hot Chocolate,
+2024-01-05 16:44:52,Pick Up,Yellow Banana Chips 60 Gm,2,120.0,Food Menu,
+2024-01-01 20:57:18,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,
+2024-01-27 21:16:34,Dine In,Rosella Jam With Filter Coffee Ganache Macaroon (2 PCS),1,164.29,SEASONAL MENU,
+2024-01-26 03:29:33,Dine In,Chicken Calzone,1,76.68,Food Menu,Naishar
+2024-01-19 17:26:02,Dine In,Iced Americano (350 ML),1,202.61,Cold Coffee,
+2024-01-01 21:13:26,Dine In,South Indian Filter Kaapi (250 ML),1,202.61,Hot Coffee,LAVINA
+2024-01-22 19:26:51,Dine In,South Indian Filter Kaapi (150 ML),2,306.67,Hot Coffee,
+2024-01-11 09:55:43,Dine In,Madagascar Chocochip Frappe (350 ML),1,366.92,Cold Coffee,
+2024-01-24 02:54:01,Pick Up,Rosella Jam With Filter Coffee Ganache Macaroon (1 PIC),1,79.99,SEASONAL MENU,
+2024-01-14 16:32:57,Pick Up,South Indian Filter Kaapi (250 ML),1,189.99,Hot Coffee,
+2024-01-03 20:59:29,Dine In,Yellow Banana Chips 60 Gm,1,65.71,Food Menu,
+2024-01-16 19:25:34,Dine In,Mix Berliner 2 Pcs (Dark Choco Mousse Berliner),1,71.19,Food Menu,soumya
+2024-01-05 20:53:00,Dine In,Origanal South Indian Frappe (350 ML),1,334.05,Cold Coffee,nitin m
+2024-01-06 23:17:41,Dine In,South Indian Filter Kaapi (150 ML),1,153.32,Hot Coffee,

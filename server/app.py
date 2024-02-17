@@ -1,8 +1,30 @@
 from flask import Flask, jsonify, request
 from flask_socketio import SocketIO
 from flask_mysqldb import MySQL
+from flask_apscheduler import APScheduler
+import logging
+# from langchain.prompts import SemanticSimilarityExampleSelector
+# from langchain.embeddings import HuggingFaceEmbeddings
+# from langchain.vectorstores import Chroma
+# from langchain.prompts import FewShotPromptTemplate
+# from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
+from langchain.prompts.prompt import PromptTemplate
+from urllib.parse import quote
+from langchain.utilities import SQLDatabase
+from langchain_experimental.sql import SQLDatabaseChain
+from langchain.llms import GooglePalm
+from flask_cors import CORS, cross_origin
+
+api_key = 'AIzaSyAk7gt4eMf1GHY-ZCQBL7LGqNp0c98bK1I'
+
+logging.basicConfig(
+    filename="server_pipline.log",
+    level=logging.DEBUG,
+    format="%(asctime)s:%(levelname)s:%(message)s",
+)
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 socketio = SocketIO(app)
 
 app.config["MYSQL_USER"] = "root"
@@ -14,10 +36,30 @@ app.config["MYSQL_DB"] = "coffee"
 mysql = MySQL()
 mysql.init_app(app)
 
+llm = GooglePalm(google_api_key=api_key, temperature=0.2)
+
+db_user = "root"
+db_password = "1234"
+db_host = "127.0.0.1"
+db_name = "coffee"
+
+encoded_password = quote(db_password)
+
+mysql_uri = f"mysql+pymysql://{db_user}:{encoded_password}@{db_host}/{db_name}"
+
+# print(mysql_uri)
+
+db = SQLDatabase.from_uri(mysql_uri,sample_rows_in_table_info=3)
+
+with app.app_context():
+    new_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
+
+# from summary import query_database
 
 @app.get("/menu")
+@cross_origin(supports_credentials=True)
 def get_menu():
-    # cursor = mysql.connection.cursor()
+    cursor = mysql.connection.cursor()
     cursor.execute("SELECT * FROM menu")
     description = [x[0] for x in cursor.description]
     result = cursor.fetchall()
@@ -29,17 +71,15 @@ def get_menu():
 
     return jsonify(menu_objects)
 
+def query_database(database_query):    
+    result = new_chain(database_query, return_only_outputs=True)
+    ans = result['result']
 
-# CREATE TABLE orders (
-#     id INT AUTO_INCREMENT PRIMARY KEY,
-#     name VARCHAR(100),
-#     quantity INT,
-#     type VARCHAR(100),
-#     total FLOAT,
-#     customer_no VARCHAR(20),
-#     time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-# );
+    prompt1 = PromptTemplate.from_template("query: {query}\nanswer:{ans}\n\nSummarize the above information.")
 
+    msg = prompt1.format(query=database_query, ans=ans)
+    res = llm(msg)
+    return res
 
 def get_orders(cursor, data=None):
     print(data)
@@ -52,7 +92,7 @@ def get_orders(cursor, data=None):
         cursor.execute("SELECT * FROM orders")
     description = [x[0] for x in cursor.description]
     result = cursor.fetchall()
-    cursor.close()
+    # cursor.close()
     order_objects = []
     for row in result:
         order_object = dict(zip(description, row))
@@ -61,15 +101,17 @@ def get_orders(cursor, data=None):
 
 
 @app.route("/order", methods=["POST", "GET"])
+@cross_origin(supports_credentials=True)
 def order():
-    cursor = mysql.connection.cursor()
     if request.method == "GET":
+        
         if request.args.get("customer_no"):
             return jsonify(get_orders(cursor, request.args.get("customer_no")))
         else:
             return jsonify(get_orders(cursor))
     elif request.method == "POST":
         data = request.json
+        
         cursor = mysql.connection.cursor()
         cursor.execute(
             "INSERT INTO orders (name, quantity, type, total, customer_no) VALUES (%s, %s, %s, %s, %s)",
@@ -96,9 +138,10 @@ def order():
 
 
 @app.route("/inventory", methods=["GET", "POST", "PUT"])
+@cross_origin(supports_credentials=True)
 def inventory():
+    cursor = mysql.connection.cursor()
     if request.method == "GET":
-        cursor = mysql.connection.cursor()
         cursor.execute("SELECT * FROM inventory")
         description = [x[0] for x in cursor.description]
         result = cursor.fetchall()
@@ -129,8 +172,43 @@ def inventory():
         cursor.close()
         return jsonify({"message": "success"})
 
+@app.post('/chat')
+@cross_origin(supports_credentials=True)
+def chat():
+    data = request.json
+    response = query_database(data['message'])
+    return jsonify({"response": response})
 
-# @socketio.on("order_r")
+@app.get('/sales')
+@cross_origin(supports_credentials=True)
+def get_sales():
+    query = "SELECT * FROM sales"
+
+            # Execute the query
+    cursor = mysql.connection.cursor()
+    cursor.execute(query)
+
+    column_names = [i[0] for i in cursor.description]
+
+    # Fetch all rows from the result set
+    sales_data = cursor.fetchall()
+    json_data = []
+    for row in sales_data:
+        json_row = {}
+        for i in range(len(column_names)):
+            if row[i] is None:
+                json_row[column_names[i]] = ''
+            else:
+                json_row[column_names[i]] = row[i]
+        json_data.append(json_row)
+
+    print(json_data)
+    cursor.close()
+    #for i in json_data:
+    #   print(i)
+    return jsonify(json_data)
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True)
+    with app.app_context():
+        cursor = mysql.connection.cursor()
+    socketio.run(app, debug=True, host="0.0.0.0")

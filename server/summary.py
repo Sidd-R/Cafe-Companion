@@ -13,7 +13,7 @@ api_key = 'AIzaSyAk7gt4eMf1GHY-ZCQBL7LGqNp0c98bK1I'
 
 llm = GooglePalm(google_api_key=api_key, temperature=0.2)
 db_user = "root"
-db_password = "Apples123mysql*"
+db_password = "1234"
 db_host = "127.0.0.1"
 db_name = "coffee"
 
@@ -21,11 +21,11 @@ encoded_password = quote(db_password)
 
 mysql_uri = f"mysql+pymysql://{db_user}:{encoded_password}@{db_host}/{db_name}"
 
-print(mysql_uri)
+# print(mysql_uri)
 
 db = SQLDatabase.from_uri(mysql_uri,sample_rows_in_table_info=3)
 
-print(db.table_info)
+# print(db.table_info)
 
 # few_shots = [
 #     {'Question' : "Give me the top 3 purchased items in my store",
@@ -59,26 +59,22 @@ print(db.table_info)
 #     input_variables=["input", "table_info", "top_k"], #These variables are used in the prefix and suffix
 # )
 
-# new_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
+new_chain = SQLDatabaseChain.from_llm(llm, my, verbose=True)
 
-# def query_database(database_query):    
-#     result = new_chain(database_query, return_only_outputs=True)
-#     ans = result['result']
 
-#     prompt1 = PromptTemplate.from_template("query: {query}\nanswer:{ans}\n\nSummarize the above information.")
 
-#     msg = prompt1.format(query=database_query, ans=ans)
-#     res = llm(msg)
-#     return res
+def query_database(database_query):    
+    result = new_chain(database_query, return_only_outputs=True)
+    ans = result['result']
 
-while True:
-    query = input("Enter your query: ")
-    if query == "exit":
-        break
-    print(query_database(query))
+    prompt1 = PromptTemplate.from_template("query: {query}\nanswer:{ans}\n\nSummarize the above information.")
 
-question = "give me the top 3 purchased items in my store"
-answer = "South Indian Filter Kaapi (150 ML), 24, Origonal South Indian Frappe (350 ML), 23, Baked Vada Pav, 20"
+    msg = prompt1.format(query=database_query, ans=ans)
+    res = llm(msg)
+    return res
 
-question2 = "give me the worst 3 purchased items in my store"
-answer2 = "South Indian Frappe (350 ML), Origonal South Indian Frappe (450 ML), and Madagascar Hot Chocolate (350 ML)"
+# while True:
+    # query = input("Enter your query: ")
+    # if query == "exit":
+    #     break
+    # print(query_database(query))
