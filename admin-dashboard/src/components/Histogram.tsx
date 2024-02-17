@@ -2,9 +2,9 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
 const topProducts = [
-  { name: 'Product A', totalSales: 1500 },
-  { name: 'Product B', totalSales: 1200 },
-  { name: 'Product C', totalSales: 900 },
+  {name: 'South Indian Filter Kaapi', totalSales: 24},
+  {name: 'Origonal South Indian Frappe (350 ML)', totalSales: 23},
+  {name: 'Baked Vada Pav', totalSales: 20},
   // Add more products as needed
 ];
 
@@ -42,8 +42,6 @@ const Histogram = () => {
   };
 
   const containerStyle = {
-    width: '500px',
-    height: '400px',
     backgroundColor: 'white',
   };
 
@@ -51,7 +49,7 @@ const Histogram = () => {
     <div style={containerStyle} className="mt-8">
       <h2 className="text-2xl font-semibold mb-4">Top 3 Products</h2>
       <div className="bg-white p-4 rounded-md shadow-md">
-        <Bar data={chartData} options={chartOptions} />
+        <Bar data={chartData} options={chartOptions} height={300} width={500}/>
       </div>
     </div>
   );

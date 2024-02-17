@@ -1,7 +1,5 @@
-'use client';
-import React, { useState } from 'react';
-import { Line } from 'react-chartjs-2';
-import { SocketContext } from '../layout';
+"use client";
+import React, { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -12,17 +10,18 @@ import {
   PointElement,
   LineElement,
   Filler,
-} from 'chart.js';
+} from "chart.js";
+import axios from "axios";
 /* This example requires Tailwind CSS v2.0+ */
 const products = [
   {
-    id: 'AAPS0L',
-    company: 'Chase & Co.',
-    share: 'CAC',
-    commission: '+$4.37',
-    price: '$3,509.00',
-    quantity: '12.00',
-    netAmount: '$4,397.00',
+    id: "AAPS0L",
+    company: "Chase & Co.",
+    share: "CAC",
+    commission: "+$4.37",
+    price: "$3,509.00",
+    quantity: "12.00",
+    netAmount: "$4,397.00",
   },
   // More products...
 ];
@@ -74,14 +73,14 @@ export default function Page() {
     labels: slicedTestData.map((test) => `Test ${test.testNo}`),
     datasets: [
       {
-        label: 'Score',
+        label: "Score",
         data: slicedTestData.map((test) => test.score),
-        borderColor: '#000000',
+        borderColor: "#000000",
         fill: true,
-        backgroundColor: 'rgba(46, 91, 255, 0.2)',
+        backgroundColor: "rgba(46, 91, 255, 0.2)",
         borderWidth: 2,
         pointRadius: 4,
-        pointBackgroundColor: '#2E5BFF',
+        pointBackgroundColor: "#2E5BFF",
       },
     ],
   };
@@ -94,12 +93,12 @@ export default function Page() {
         grid: {
           display: false,
         },
-        position: 'bottom',
+        position: "bottom",
       },
       y: {
         grid: {
-          color: '#EAEAEA',
-          borderColor: '#EAEAEA',
+          color: "#EAEAEA",
+          borderColor: "#EAEAEA",
           borderWidth: 1,
         },
         min: 0,
@@ -107,121 +106,136 @@ export default function Page() {
         ticks: {
           stepSize: 20,
         },
-        position: 'left',
+        position: "left",
       },
     },
     plugins: {
       legend: {
         display: true,
-        position: 'top',
+        position: "top",
       },
       tooltip: {
-        mode: 'index',
+        mode: "index",
         intersect: false,
-        backgroundColor: 'rgba(46, 91, 255, 0.8)',
-        bodyColor: '#EAEAEA',
-        titleColor: '#EAEAEA',
+        backgroundColor: "rgba(46, 91, 255, 0.8)",
+        bodyColor: "#EAEAEA",
+        titleColor: "#EAEAEA",
       },
     },
   };
 
-  const [products, setProducts] = useState([])
+  const [filterCategory, setFilterCategory] = useState("");
+  const [products, setProducts] = useState([]);
 
-  const send_products = (data) => {
-    console.log('sp',data);
-    setProducts(data.data)
-  }
+  const filteredData = products.filter((item) => {
+    return (
+      (filterCategory === "" || item.category === filterCategory)
+    );
+  });
+  
+  const headers = {
+    "ngrok-skip-browser-warning": "1231",
+  };
 
-
-  // const socket = React.useContext(SocketContext);
-  // React.useEffect(() => {
-  //   // if (!socket?.connected) {
-  //   console.log('connecting 1');
-
-  //   // }
-
-  //   socket?.emit('get_products');
-  //   socket?.on('send_products', send_products);
-
-  //   return () => {
-  //     socket?.off('send_products', send_products);
-  //   };
-  // });
+  useEffect(() => {
+    axios
+      .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}menu`, {
+        headers: headers,
+      })
+      .then((response) => {
+        console.log(response.data);
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
-    <div className="px-4 mt-10 md:pl-64">
-      <div className="sm:flex sm:items-center">
-        <div className="sm:flex-auto">
-          <h1 className="text-xl font-semibold text-gray-900">Products</h1>
-          <p className="mt-2 text-sm text-gray-700">
-            List of all the available products
-          </p>
+    <div className="px-4 mt-10 md:pl-72">
+      <div className="flex justify-between items-center mb-4">
+      <h2 className="text-2xl font-semibold">Menu</h2>
+        <div className="flex items-center">
+          <label className="mr-2 text-gray-700">Filter by Category:</label>
+          <select
+            className="px-2 py-1 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition duration-300"
+            onChange={(e) => setFilterCategory(e.target.value)}
+            value={filterCategory}
+          >
+            <option value="">All</option>
+            <option value="Hot Coffee">Hot Coffee</option>
+            <option value="Cold Coffee">Cold Coffee</option>
+            <option value="Manual Brew">Manual Brew</option>
+            <option value="Not Coffee">Not Coffee</option>
+            <option value="Coffee Coolers">Coffee Coolers</option>
+            {/* Add other categories as needed */}
+          </select>
         </div>
       </div>
       <div className="mt-8 flex flex-col">
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-              <table className="min-w-full divide-y divide-gray-300">
+              <table className="min-w-full divide-y divide-gray-300 w-[1000px]">
                 <thead className="bg-gray-50">
                   <tr>
                     <th
                       scope="col"
                       className="whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                     >
-                     ID
+                      ID
                     </th>
                     <th
                       scope="col"
                       className="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Item
+                      Name
                     </th>
                     <th
                       scope="col"
                       className="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Date Bought In
+                      Category
                     </th>
                     <th
                       scope="col"
                       className="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Quantity
+                      Med Price
                     </th>
                     <th
                       scope="col"
                       className="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Cost Price
+                      Large Price
                     </th>
                     <th
                       scope="col"
                       className="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Selling Price
+                      Description
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  {products.map((product) => (
-                    <tr key={product[0]}>
+                  {filteredData.map((product) => (
+                    <tr key={product.id}>
                       <td className="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-6">
-                        {product[0]}
+                        {product.id}
                       </td>
                       <td className="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900">
-                        {product[1]}
+                        {product.name}
                       </td>
                       <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-900">
-                        {product[3]}
+                        {product.category}
                       </td>
                       <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
-                        {product[7]}
+                        {product.med_price === 0 ? "N/A" : product.med_price}
                       </td>
                       <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
-                        {product[5]}
+                        {product.large_price === 0 ? "N/A" : product.large_price}
                       </td>
-                      <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
-                        {product[6]}
+                      <td className="px-2 py-2 text-sm text-gray-500 max-w-[300px]">
+                        {product.description}
                       </td>
                     </tr>
                   ))}
