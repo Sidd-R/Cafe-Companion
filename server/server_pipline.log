@@ -1,0 +1,146 @@
+2024-02-18 01:44:46,323:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-18 01:44:46,323:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 01:44:46,324:INFO: * Restarting with stat
+2024-02-18 01:44:48,181:WARNING: * Debugger is active!
+2024-02-18 01:44:48,184:INFO: * Debugger PIN: 135-252-320
+2024-02-18 01:47:46,283:INFO:127.0.0.1 - - [18/Feb/2024 01:47:46] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:00:44,190:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-18 02:00:44,190:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 02:00:44,190:INFO: * Restarting with stat
+2024-02-18 02:00:45,837:WARNING: * Debugger is active!
+2024-02-18 02:00:45,841:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:01:00,657:INFO:127.0.0.1 - - [18/Feb/2024 02:01:00] "[35m[1mGET /inventory HTTP/1.1[0m" 500 -
+2024-02-18 02:01:46,375:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:01:46,576:INFO: * Restarting with stat
+2024-02-18 02:01:48,633:WARNING: * Debugger is active!
+2024-02-18 02:01:48,636:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:01:52,614:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-18 02:01:52,615:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 02:01:52,615:INFO: * Restarting with stat
+2024-02-18 02:01:54,586:WARNING: * Debugger is active!
+2024-02-18 02:01:54,589:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:02:04,034:INFO:127.0.0.1 - - [18/Feb/2024 02:02:04] "GET /inventory HTTP/1.1" 200 -
+2024-02-18 02:02:27,443:INFO:127.0.0.1 - - [18/Feb/2024 02:02:27] "[33mGET / HTTP/1.1[0m" 404 -
+2024-02-18 02:09:29,817:INFO:127.0.0.1 - - [18/Feb/2024 02:09:29] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:09:36,799:INFO:127.0.0.1 - - [18/Feb/2024 02:09:36] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:22:30,043:INFO:127.0.0.1 - - [18/Feb/2024 02:22:30] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:23:22,644:INFO:127.0.0.1 - - [18/Feb/2024 02:23:22] "[35m[1mGET /menu HTTP/1.1[0m" 500 -
+2024-02-18 02:23:57,865:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:23:58,111:INFO: * Restarting with stat
+2024-02-18 02:24:00,693:WARNING: * Debugger is active!
+2024-02-18 02:24:00,697:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:24:03,762:INFO:127.0.0.1 - - [18/Feb/2024 02:24:03] "[35m[1mGET /menu HTTP/1.1[0m" 500 -
+2024-02-18 02:24:12,042:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-18 02:24:12,042:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 02:24:12,042:INFO: * Restarting with stat
+2024-02-18 02:24:13,633:WARNING: * Debugger is active!
+2024-02-18 02:24:13,636:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:24:16,787:INFO:127.0.0.1 - - [18/Feb/2024 02:24:16] "[35m[1mGET /menu HTTP/1.1[0m" 500 -
+2024-02-18 02:25:09,147:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:25:09,346:INFO: * Restarting with stat
+2024-02-18 02:25:11,188:WARNING: * Debugger is active!
+2024-02-18 02:25:11,191:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:25:17,721:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-18 02:25:17,721:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 02:25:17,721:INFO: * Restarting with stat
+2024-02-18 02:25:19,532:WARNING: * Debugger is active!
+2024-02-18 02:25:19,535:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:25:20,075:INFO:127.0.0.1 - - [18/Feb/2024 02:25:20] "[35m[1mGET /menu HTTP/1.1[0m" 500 -
+2024-02-18 02:26:06,658:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:26:06,858:INFO: * Restarting with stat
+2024-02-18 02:26:10,351:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-18 02:26:10,351:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 02:26:10,351:INFO: * Restarting with stat
+2024-02-18 02:26:12,035:WARNING: * Debugger is active!
+2024-02-18 02:26:12,038:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:26:12,579:INFO:127.0.0.1 - - [18/Feb/2024 02:26:12] "GET /menu HTTP/1.1" 200 -
+2024-02-18 02:26:22,584:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:26:22,808:INFO: * Restarting with stat
+2024-02-18 02:26:24,623:WARNING: * Debugger is active!
+2024-02-18 02:26:24,626:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:27:02,627:INFO:127.0.0.1 - - [18/Feb/2024 02:27:02] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:29:42,240:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:29:42,240:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:29:43,434:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.120.105.85:5000
+2024-02-18 02:29:43,434:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 02:29:43,434:INFO: * Restarting with stat
+2024-02-18 02:29:44,930:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:29:44,931:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:29:45,321:WARNING: * Debugger is active!
+2024-02-18 02:29:45,324:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:29:48,565:INFO:127.0.0.1 - - [18/Feb/2024 02:29:48] "GET /inventory HTTP/1.1" 200 -
+2024-02-18 02:30:03,676:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:30:03,907:INFO: * Restarting with stat
+2024-02-18 02:30:07,851:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:30:07,852:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:30:09,013:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.120.105.85:5000
+2024-02-18 02:30:09,013:INFO:[33mPress CTRL+C to quit[0m
+2024-02-18 02:30:09,013:INFO: * Restarting with stat
+2024-02-18 02:30:10,309:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:30:10,309:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:30:10,637:WARNING: * Debugger is active!
+2024-02-18 02:30:10,640:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:30:12,504:INFO:127.0.0.1 - - [18/Feb/2024 02:30:12] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:30:23,182:INFO:127.0.0.1 - - [18/Feb/2024 02:30:23] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:35:53,799:INFO:127.0.0.1 - - [18/Feb/2024 02:35:53] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:35:53,801:INFO:127.0.0.1 - - [18/Feb/2024 02:35:53] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:36:00,736:INFO:127.0.0.1 - - [18/Feb/2024 02:36:00] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:36:01,806:INFO:127.0.0.1 - - [18/Feb/2024 02:36:01] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:37:28,270:INFO:127.0.0.1 - - [18/Feb/2024 02:37:28] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:37:34,349:INFO:127.0.0.1 - - [18/Feb/2024 02:37:34] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:49:39,536:INFO:127.0.0.1 - - [18/Feb/2024 02:49:39] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:49:42,828:INFO:127.0.0.1 - - [18/Feb/2024 02:49:42] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2024-02-18 02:50:22,154:INFO:127.0.0.1 - - [18/Feb/2024 02:50:22] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:50:24,668:INFO:127.0.0.1 - - [18/Feb/2024 02:50:24] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2024-02-18 02:50:53,871:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\temp.py', reloading
+2024-02-18 02:50:54,146:INFO: * Restarting with stat
+2024-02-18 02:50:56,031:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:50:56,031:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:50:56,430:WARNING: * Debugger is active!
+2024-02-18 02:50:56,437:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:52:01,303:INFO:127.0.0.1 - - [18/Feb/2024 02:52:01] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:52:08,360:INFO:127.0.0.1 - - [18/Feb/2024 02:52:08] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2024-02-18 02:52:33,994:INFO:127.0.0.1 - - [18/Feb/2024 02:52:33] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:52:44,652:INFO:127.0.0.1 - - [18/Feb/2024 02:52:44] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:52:48,381:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:52:48,691:INFO: * Restarting with stat
+2024-02-18 02:52:50,204:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:52:50,205:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:52:50,562:WARNING: * Debugger is active!
+2024-02-18 02:52:50,565:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:53:21,481:INFO:127.0.0.1 - - [18/Feb/2024 02:53:21] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:53:35,537:INFO:127.0.0.1 - - [18/Feb/2024 02:53:35] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:54:13,481:INFO:127.0.0.1 - - [18/Feb/2024 02:54:13] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:54:23,626:INFO:127.0.0.1 - - [18/Feb/2024 02:54:23] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:54:35,393:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:54:35,660:INFO: * Restarting with stat
+2024-02-18 02:54:37,209:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:54:37,209:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:54:37,546:WARNING: * Debugger is active!
+2024-02-18 02:54:37,549:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:54:45,960:INFO:127.0.0.1 - - [18/Feb/2024 02:54:45] "[35m[1mGET /sales HTTP/1.1[0m" 500 -
+2024-02-18 02:55:11,491:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 02:55:11,764:INFO: * Restarting with stat
+2024-02-18 02:55:13,221:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:55:13,221:WARNING:Unknown option passed to Flask-CORS: support_credentials
+2024-02-18 02:55:13,617:WARNING: * Debugger is active!
+2024-02-18 02:55:13,621:INFO: * Debugger PIN: 135-252-320
+2024-02-18 02:55:13,838:INFO:127.0.0.1 - - [18/Feb/2024 02:55:13] "GET /sales HTTP/1.1" 200 -
+2024-02-18 02:58:37,749:INFO:127.0.0.1 - - [18/Feb/2024 02:58:37] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:58:50,733:INFO:127.0.0.1 - - [18/Feb/2024 02:58:50] "POST /chat HTTP/1.1" 200 -
+2024-02-18 02:59:39,908:INFO:127.0.0.1 - - [18/Feb/2024 02:59:39] "OPTIONS /chat HTTP/1.1" 200 -
+2024-02-18 02:59:51,630:INFO:127.0.0.1 - - [18/Feb/2024 02:59:51] "POST /chat HTTP/1.1" 200 -
+2024-02-18 03:33:54,962:INFO: * Detected change in 'C:\\Users\\Siddhant Rao\\Desktop\\estarra_coffee\\server\\app.py', reloading
+2024-02-18 03:33:55,211:INFO: * Restarting with stat
