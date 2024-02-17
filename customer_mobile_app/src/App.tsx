@@ -22,6 +22,11 @@ import ShopScreen from './pages/ShopScreen';
 import AppNavigation from './pages/AppNavigation';
 import SearchScreen from './pages/SearchScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+
+type SectionProps = PropsWithChildren<{
+  title: string;
+}>;
 
 export type AuthStackParamList = {
   HOME: undefined;
@@ -37,6 +42,7 @@ function App(): React.JSX.Element {
     backgroundColor: '#fff9f3',
     flex: 1,
   };
+
   React.useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
@@ -45,15 +51,13 @@ function App(): React.JSX.Element {
 
   return (
     <>
-      <SafeAreaView style={backgroundStyle}>
-        <AuthStack.Navigator screenOptions={{headerShown: false}}>
-        <AuthStack.Screen name="APP" component={AppNavigation} options={{statusBarColor:'#00ff00'}} />
-
-          {/* <AuthStack.Screen name="HOME" component={HomeScreen} /> */}
-          {/* <AuthStack.Screen name="SHOP" component={ShopScreen} /> */}
-          {/* <AuthStack.Screen name="SEARCH" component={SearchScreen} /> */}
-        </AuthStack.Navigator>
-      </SafeAreaView>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <SafeAreaView style={backgroundStyle}>
+          <AuthStack.Navigator screenOptions={{headerShown: false}}>
+            <AuthStack.Screen name="APP" component={AppNavigation} />
+          </AuthStack.Navigator>
+        </SafeAreaView>
+      </GestureHandlerRootView>
     </>
   );
 }

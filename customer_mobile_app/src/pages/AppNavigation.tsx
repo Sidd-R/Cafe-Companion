@@ -20,6 +20,7 @@ import {AuthStackParamList} from '../App';
 import axios from 'axios';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import {BottomNavigation} from 'react-native-paper';
+import {useTheme} from 'react-native-paper';
 import StatusBar from '../components/StatusBar';
 import SearchScreen from './SearchScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -36,16 +37,14 @@ type Props = NativeStackScreenProps<AuthStackParamList, 'APP'>;
 const Tab = createBottomTabNavigator<AppBottomNavigationParamList>();
 
 const AppNavigation = ({navigation}: Props) => {
-  const [update, setUpdate] = React.useState(false);
-  const [checkUpdate, setCheckUpdate] = React.useState(true);
-
+  const theme = useTheme();
   return (
     <>
       <Tab.Navigator
         screenOptions={{
-          headerShown: true,
+          headerShown: false,
           tabBarStyle: {height: 71, paddingBottom: 13},
-          // tabBarActiveTintColor: '#313BE4',
+          tabBarActiveBackgroundColor: theme.colors.primary,
         }}
         tabBar={({navigation, state, descriptors, insets}) => (
           <BottomNavigation.Bar
@@ -69,6 +68,7 @@ const AppNavigation = ({navigation}: Props) => {
             }}
             renderIcon={({route, focused, color}) => {
               const {options} = descriptors[route.key];
+
               if (options.tabBarIcon) {
                 return options.tabBarIcon({focused, color, size: 24});
               }
@@ -92,7 +92,8 @@ const AppNavigation = ({navigation}: Props) => {
           name="HOME"
           component={HomeScreen}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'HOME',
+
             tabBarIcon: ({color, size}) => {
               return <Icon name="home" size={size} color={color} />;
             },
@@ -102,9 +103,9 @@ const AppNavigation = ({navigation}: Props) => {
           name="SHOP"
           component={ShopScreen}
           options={{
-            tabBarLabel: 'Settings',
+            tabBarLabel: 'ORDER',
             tabBarIcon: ({color, size}) => {
-              return <Icon name="cog" size={size} color={color} />;
+              return <Icon name="food" size={size} color={color} />;
             },
           }}
         />
@@ -112,9 +113,9 @@ const AppNavigation = ({navigation}: Props) => {
           name="SEARCH"
           component={SearchScreen}
           options={{
-            tabBarLabel: 'Settings',
+            tabBarLabel: 'SEARCH',
             tabBarIcon: ({color, size}) => {
-              return <Icon name="cog" size={size} color={color} />;
+              return <Icon name="magnify" size={size} color={color} />;
             },
           }}
         />
