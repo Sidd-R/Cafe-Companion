@@ -2,6 +2,7 @@ const qrcode = require("qrcode-terminal");
 const fs = require("fs");
 const { storeOrder } = require("./storeSQL");
 const pdfGen = require("./mail");
+const { storeReview } = require("./storeReview");
 
 const {
   Client,
@@ -36,37 +37,9 @@ client.on("message", async (message) => {
     await message.reply("pong");
   }
 
-  // Send Media
-  //   if (message.body === "!media") {
-  //     const media = MessageMedia.fromFilePath("media/wound.png");
-  //     await client.sendMessage(message.from, media);
-  //   }
-
-  // Downloading images sent by user
-  //   if (message.hasMedia) {
-  //     const media = await message.downloadMedia({
-  //       path: "media",
-  //     });
-  //     const base64 = media.data.replace("/^data:image/(png|jpg);base64,/", "");
-  //     const buffer = Buffer.from(base64, "base64");
-  //     fs.writeFileSync(`uploads/${message.from}.png`, buffer, (err) => {
-  //       if (err) {
-  //         console.log(err);
-  //       } else {
-  //         console.log("File saved");
-  //       }
-  //     });
-  //   }
-
   // Send Location
   if (message.body === "!location") {
     await message.reply(new Location(19.1014, 72.8274, "Ettarra Coffee House"));
-  }
-
-  // Send pdf
-  if (message.body === "!pdf") {
-    const pdf = MessageMedia.fromFilePath("invoices/resume.pdf");
-    await client.sendMessage(message.from, pdf, { caption: "Your resume" });
   }
 
   if (message.body.startsWith("!order")) {
@@ -94,6 +67,27 @@ client.on("message", async (message) => {
       // const pdf = MessageMedia.fromFilePath(pdfPath);
       // await client.sendMessage(message.from, pdf, "Your invoice is ready!");
     });
+  }
+
+  if (message.body.startsWith("!review")) {
+    const review = message.body.split(" ").slice(1).join(" ");
+    console.log(review);
+    const from = message.from.split("@")[0];
+    const stars = spawner("python", ["stars.py", review]);
+    stars.stdout.on("data", async (data) => {
+      console.log(data.toString());
+      const new_review = {
+        from: from,
+        comment: review,
+        stars: parseInt(data.toString()[0]),
+      };
+      console.log(new_review);
+      storeReview(new_review);
+      console.log("Review stored!");
+    });
+    await message.reply(
+      "Thank you for your review! We will get back to you soon."
+    );
   }
 });
 
