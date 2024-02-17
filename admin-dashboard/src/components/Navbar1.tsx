@@ -17,13 +17,14 @@ import {
 } from "@heroicons/react/24/outline";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = [
   { name: "Dashboard", href: "/admin", icon: HomeIcon, current: true },
   {
     name: "Products",
     href: "/admin/products",
-    icon: UsersIcon,
+    icon: SparklesIcon,
     current: false,
   },
   {
@@ -41,7 +42,7 @@ const navigation = [
   {
     name: "Customers",
     href: "/admin/customers",
-    icon: InboxIcon,
+    icon: UsersIcon,
     current: false,
   },
   {
@@ -173,7 +174,7 @@ export default function Navbar1() {
                 alt="Workflow"
               /> */}
               <div className="text-indigo-50 font-thin text-3xl">
-                Ettarra Coffee
+                <Image src="/logo.png" width={220} height={50} style={{height: 50}}/>
               </div>
             </div>
             <div className="mt-5 flex-1 flex flex-col">

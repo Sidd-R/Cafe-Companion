@@ -13,14 +13,15 @@ const SalesDistributionPieChart = () => {
         data: [dineInSales, deliverySales],
         backgroundColor: ['#FF6384', '#36A2EB'],
         hoverBackgroundColor: ['#FF6384', '#36A2EB'],
-        radius: 100,
+        radius: 80,
       },
     ],
   };
 
   const chartOptions = {
     maintainAspectRatio: true,
-    responsive: true,
+    outerHeight: 300,
+    outerWidth: 300,
   };
 
 

@@ -1,8 +1,13 @@
+from langchain.prompts import SemanticSimilarityExampleSelector
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.prompts import FewShotPromptTemplate
+from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
+from langchain.prompts.prompt import PromptTemplate
 from urllib.parse import quote
 from langchain.utilities import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
 from langchain.llms import GooglePalm
-from langchain.prompts import PromptTemplate
 
 api_key = 'AIzaSyAk7gt4eMf1GHY-ZCQBL7LGqNp0c98bK1I'
 
@@ -22,18 +27,58 @@ db = SQLDatabase.from_uri(mysql_uri,sample_rows_in_table_info=3)
 
 print(db.table_info)
 
-db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
+# few_shots = [
+#     {'Question' : "Give me the top 3 purchased items in my store",
+#      'SQLQuery' : "SELECT Item_name FROM sales GROUP BY Item_name ORDER BY SUM(Quantity) DESC LIMIT 3",
+#      'SQLResult': "Result of the SQL query",
+#      'Answer' : ["Item1", "Item2", "Item3"]},
+# ]
 
-def query_database(database_query):    
-    result = db_chain(database_query, return_only_outputs=True)
-    ans = result['result']
+# embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
 
-    prompt1 = PromptTemplate.from_template("query: {query}\nanswer:{ans}\n\nSummarize the above information.")
+# to_vectorize = [" ".join(example.values()) for example in few_shots]
+# # print(to_vectorize)
 
-    msg = prompt1.format(query=database_query, ans=ans)
-    res = llm(msg)
-    return res
-  
-qns2 = query_database("What will be the profit if I sell 23 bottles of milk")
+# vectorstore = Chroma.from_texts(to_vectorize, embeddings, metadatas=few_shots)
 
-print(qns2)
+# example_selector = SemanticSimilarityExampleSelector(
+#     vectorstore=vectorstore,
+#     k=2,
+# )
+
+# example_prompt = PromptTemplate(
+#     input_variables=["Question", "SQLQuery", "SQLResult","Answer",],
+#     template="\nQuestion: {Question}\nSQLQuery: {SQLQuery}\nSQLResult: {SQLResult}\nAnswer: {Answer}",
+# )
+
+# few_shot_prompt = FewShotPromptTemplate(
+#     example_selector=example_selector,
+#     example_prompt=example_prompt,
+#     prefix=_mysql_prompt,
+#     suffix=PROMPT_SUFFIX,
+#     input_variables=["input", "table_info", "top_k"], #These variables are used in the prefix and suffix
+# )
+
+# new_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
+
+# def query_database(database_query):    
+#     result = new_chain(database_query, return_only_outputs=True)
+#     ans = result['result']
+
+#     prompt1 = PromptTemplate.from_template("query: {query}\nanswer:{ans}\n\nSummarize the above information.")
+
+#     msg = prompt1.format(query=database_query, ans=ans)
+#     res = llm(msg)
+#     return res
+
+while True:
+    query = input("Enter your query: ")
+    if query == "exit":
+        break
+    print(query_database(query))
+
+question = "give me the top 3 purchased items in my store"
+answer = "South Indian Filter Kaapi (150 ML), 24, Origonal South Indian Frappe (350 ML), 23, Baked Vada Pav, 20"
+
+question2 = "give me the worst 3 purchased items in my store"
+answer2 = "South Indian Frappe (350 ML), Origonal South Indian Frappe (450 ML), and Madagascar Hot Chocolate (350 ML)"

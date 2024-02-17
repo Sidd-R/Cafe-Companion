@@ -1,152 +1,104 @@
 "use client";
-import React, { useState } from "react";
+import axios from "axios";
+// src/components/SalesHistory.js
 
-// Replace this with your actual sales data
-const salesData = [
-  {
-    timestamp: "22-02-14 12:30",
-    orderType: "Dine-in",
-    itemName: "Burger",
-    quantity: 2,
-    total: 20.0,
-    category: "Food",
-    customerName: "John Doe",
-  },
-  {
-    timestamp: "22-02-14 18:45",
-    orderType: "Delivery",
-    itemName: "Pizza",
-    quantity: 1,
-    total: 15.0,
-    category: "Food",
-    customerName: "Jane Smith",
-  },
-  {
-    timestamp: "22-02-13 14:15",
-    orderType: "Dine-in",
-    itemName: "Salad",
-    quantity: 1,
-    total: 12.0,
-    category: "Food",
-    customerName: "Bob Johnson",
-  },
-];
+import React, { useEffect, useState } from "react";
 
-const SalesDataPage = () => {
-  const [filteredData, setFilteredData] = useState(salesData);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 25;
+const SalesHistory = () => {
+  const [filterCategory, setFilterCategory] = useState("");
+  const [filterOrderType, setFilterOrderType] = useState("");
 
-  // Pagination
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
-
-  // Handle page change
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
+  const [data, setData] = useState([]);
+  const headers = {
+    "ngrok-skip-browser-warning": "1231",
   };
 
-  // Handle filtering
-  const handleFilter = (filterType, filterValue) => {
-    const filtered = salesData.filter((item) => {
-      if (filterType === "orderType") {
-        return item.orderType === filterValue;
-      }
-      if (filterType === "category") {
-        return item.category === filterValue;
-      }
-      return true; // No filter
-    });
-    setFilteredData(filtered);
-    setCurrentPage(1); // Reset to first page after filtering
-  };
+  useEffect(() => {
+    axios
+      .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}sales`,{
+        headers: headers,
+      })
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const filteredData = data.filter((item) => {
+    return (
+      (filterCategory === "" || item.Category === filterCategory) &&
+      (filterOrderType === "" || item.Order_type === filterOrderType)
+    );
+  });
 
   return (
-    <div className="max-w-4xl mx-auto mt-8">
-      <h2 className="text-2xl font-semibold mb-4">Sales Data</h2>
-
-      {/* Filters */}
-      <div className="flex space-x-4 mb-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Order Type:
-          </label>
+    <div className="container mt-8 md:pl-72 px-4">
+      <h2 className="text-2xl font-semibold mb-4">Sales History</h2>
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center">
+          <label className="mr-2 text-gray-700">Filter by Category:</label>
           <select
-            onChange={(e) => handleFilter("orderType", e.target.value)}
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+            className="px-2 py-1 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition duration-300"
+            onChange={(e) => setFilterCategory(e.target.value)}
+            value={filterCategory}
           >
             <option value="">All</option>
-            <option value="Dine-in">Dine-in</option>
-            {/* Add more options based on your data */}
+            <option value="Food Menu">Food Menu</option>
+            <option value="Cold Coffee">Cold Coffee</option>
+            {/* Add other categories as needed */}
           </select>
         </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Category:
-          </label>
+        <div className="flex items-center">
+          <label className="mr-2 text-gray-700">Filter by Order Type:</label>
           <select
-            onChange={(e) => handleFilter("category", e.target.value)}
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+            className="px-2 py-1 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition duration-300"
+            onChange={(e) => setFilterOrderType(e.target.value)}
+            value={filterOrderType}
           >
             <option value="">All</option>
-            <option value="Food">Food</option>
-            {/* Add more options based on your data */}
+            <option value="Dine In">Dine In</option>
+            <option value="Pick Up">Pick Up</option>
+            {/* Add other order types as needed */}
           </select>
         </div>
       </div>
 
-      {/* Sales Data Table */}
-      <div className="bg-white p-4 rounded-md shadow-md">
-        <table className="min-w-full">
-          <thead>
-            <tr>
-              <th className="text-left">Timestamp</th>
-              <th className="text-left">Order Type</th>
-              <th className="text-left">Item Name</th>
-              <th className="text-left">Quantity</th>
-              <th className="text-left">Total</th>
-              <th className="text-left">Category</th>
-              <th className="text-left">Customer Name</th>
+      <table className="min-w-full bg-white border border-gray-300 shadow-lg">
+        {/* Table header */}
+        <thead className="bg-gray-100">
+          <tr>
+            <th className="py-2 px-4 border-b">Timestamp</th>
+            <th className="py-2 px-4 border-b">Order Type</th>
+            <th className="py-2 px-4 border-b">Item Name</th>
+            <th className="py-2 px-4 border-b">Quantity</th>
+            <th className="py-2 px-4 border-b">Total</th>
+            <th className="py-2 px-4 border-b">Category</th>
+            <th className="py-2 px-4 border-b">Customer Name</th>
+          </tr>
+        </thead>
+
+        {/* Table body */}
+        <tbody>
+          {filteredData.map((item, index) => (
+            <tr
+              key={index}
+              className="transition duration-300 hover:bg-gray-50"
+            >
+              <td className="py-2 px-4 border-b">{item.Timestamp}</td>
+              <td className="py-2 px-4 border-b">{item.Order_type}</td>
+              <td className="py-2 px-4 border-b">{item.Item_name}</td>
+              <td className="py-2 px-4 border-b">{item.Quantity}</td>
+              <td className="py-2 px-4 border-b">{item.Total}</td>
+              <td className="py-2 px-4 border-b">{item.Category}</td>
+              <td className="py-2 px-4 border-b">{item.Customer_Name}</td>
             </tr>
-          </thead>
-          <tbody>
-            {currentItems.map((item, index) => (
-              <tr key={index}>
-                <td>{item.timestamp}</td>
-                <td>{item.orderType}</td>
-                <td>{item.itemName}</td>
-                <td>{item.quantity}</td>
-                <td>{item.total}</td>
-                <td>{item.category}</td>
-                <td>{item.customerName}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Pagination */}
-      <div className="mt-4 flex justify-center items-center">
-        {Array.from({
-          length: Math.ceil(filteredData.length / itemsPerPage),
-        }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
-            className={`mx-1 p-2 text-sm rounded-md focus:outline-none focus:ring focus:border-blue-300 ${
-              currentPage === index + 1
-                ? "bg-blue-500 text-white"
-                : "bg-white text-gray-700"
-            }`}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
 
-export default SalesDataPage;
+export default SalesHistory;
