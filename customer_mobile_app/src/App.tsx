@@ -23,25 +23,6 @@ import AppNavigation from './pages/AppNavigation';
 import SearchScreen from './pages/SearchScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  React.useEffect(() => {
-    setTimeout(() => {
-      SplashScreen.hide();
-    }, 2000);
-  }, []);
-
-  return (
-    <View style={styles.sectionContainer}>
-      <Text style={[styles.sectionTitle]}>{title}</Text>
-      <Text style={[styles.sectionDescription]}>{children}</Text>
-    </View>
-  );
-}
-
 export type AuthStackParamList = {
   HOME: undefined;
   SHOP: undefined;
@@ -56,15 +37,21 @@ function App(): React.JSX.Element {
     backgroundColor: '#fff9f3',
     flex: 1,
   };
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }, []);
 
   return (
     <>
       <SafeAreaView style={backgroundStyle}>
         <AuthStack.Navigator screenOptions={{headerShown: false}}>
-          <AuthStack.Screen name="HOME" component={HomeScreen} />
-          <AuthStack.Screen name="APP" component={AppNavigation} />
-          <AuthStack.Screen name="SHOP" component={ShopScreen} />
-          <AuthStack.Screen name="SEARCH" component={SearchScreen} />
+        <AuthStack.Screen name="APP" component={AppNavigation} options={{statusBarColor:'#00ff00'}} />
+
+          {/* <AuthStack.Screen name="HOME" component={HomeScreen} /> */}
+          {/* <AuthStack.Screen name="SHOP" component={ShopScreen} /> */}
+          {/* <AuthStack.Screen name="SEARCH" component={SearchScreen} /> */}
         </AuthStack.Navigator>
       </SafeAreaView>
     </>

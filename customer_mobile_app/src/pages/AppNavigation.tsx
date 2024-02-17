@@ -84,7 +84,7 @@ const AppNavigation = ({navigation}: Props) => {
                   ? options.title
                   : route.name;
 
-              return label;
+              return label.toString();
             }}
           />
         )}>
