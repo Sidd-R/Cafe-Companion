@@ -5,6 +5,7 @@ import { Listbox, Transition } from "@headlessui/react";
 // import { SocketContext } from '@/app/layout';
 // import { title } from 'process';
 import axios from "axios";
+import { ChatInput } from "./ChatInput";
 
 function ChatInterface() {
   const [query, setQuery] = useState("");
@@ -18,7 +19,7 @@ function ChatInterface() {
       position: "left",
       type: "text",
       text: data,
-      title: "Inventory assistant",
+      title: "BaristoAI",
     };
     setMessages((prev) => [...prev, new_msg]);
   };
@@ -60,45 +61,7 @@ function ChatInterface() {
       </div>
       <div className="flex items-start space-x-4">
         <div className="min-w-0 flex-1">
-          <div className="relative">
-            <div className="border border-gray-300 rounded-lg shadow-sm overflow-hidden ">
-              <label htmlFor="comment" className="sr-only">
-                Add your comment
-              </label>
-              <textarea
-                rows={1}
-                name="comment"
-                onChange={(e) => setQuery(e.target.value)}
-                id="comment"
-                className="block w-full py-3 border-0 resize-none sm:text-sm px-7 focus:ring-0 focus:border-white"
-                placeholder="query here"
-                // defaultValue={''}
-                value={query}
-                // style={}
-              />
-
-              {/* Spacer element to match the height of the toolbar */}
-              <div className="py-2" aria-hidden="true">
-                {/* Matches height of button in toolbar (1px border + 36px content height) */}
-                <div className="py-px">
-                  <div className="h-9" />
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 inset-x-0 pl-3 pr-2 py-2 flex justify-between">
-              <div className="flex items-center space-x-5"></div>
-              <div className="flex-shrink-0">
-                <button
-                  type="submit"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  onClick={send_query}
-                >
-                  Post
-                </button>
-              </div>
-            </div>
-          </div>
+          <ChatInput query={query} setQuery={setQuery} send_query={send_query} />
         </div>
       </div>
     </div>

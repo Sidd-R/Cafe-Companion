@@ -63,8 +63,8 @@ const MapComponent: React.FC = () => {
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
-      <div className="md:pl-64 relative">
-        <div style={{ height: "700px", width: "100%" }}>
+      <div className="md:pl-64">
+        <div style={{ height: "700px", width: "100%", position:"relative" }}>
           <Map zoom={defaultZoom} center={defaultCenter}>
             {restaurants.map((restaurant) => (
               <Marker

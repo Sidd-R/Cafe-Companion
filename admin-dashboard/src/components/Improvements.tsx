@@ -4,19 +4,38 @@ const Improvements = () => {
   const [checklist, setChecklist] = useState([
     {
       id: 1,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      text: "Be more careful when serving coffee to customers.",
       selected: false,
     },
     {
       id: 2,
-      text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      text: "Make sure the orders are correct",
       selected: false,
     },
     {
       id: 3,
-      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      text: "Make sure the Vietnamese coffee tastes like a Vietnamese coffee!",
       selected: false,
     },
+    {
+      id: 4,
+      text: "Make sure the Vietnamese coffee tastes like a Vietnamese coffee!",
+      selected: false,
+    },
+    {
+      id: 5,
+      text: "Make sure the food is fresh and hot, and the portions are generous",
+      selected: false,
+    },
+    {
+      id: 6,
+      text: "Increase the size of the sandwich and keema pav",
+      selected: false,
+    },{
+      id: 7,
+      text: "Make sure the mocha is made according to the customer's specifications.",
+      selected: false,
+    }
     // Add more items as needed
   ]);
 
@@ -35,7 +54,7 @@ const Improvements = () => {
   };
 
   return (
-    <div className="p-4 rounded-md bg-white border border-gray-300 shadow-lg min-h-[500px] min-w-[350px] max-w-[400px] overflow-auto flex flex-col justify-between">
+    <div className="p-4 rounded-md bg-white border border-gray-300 shadow-lg max-h-[500px] min-w-[350px] max-w-[400px] overflow-auto flex flex-col justify-between">
       <div>
         <h2 className="text-lg font-semibold mb-4 text-center">
           Improvements Checklist
@@ -48,7 +67,7 @@ const Improvements = () => {
                 id={`item-${item.id}`}
                 checked={item.selected}
                 onChange={() => handleCheckboxChange(item.id)}
-                style={{ width: "30px", height: "30px" }}
+                style={{ width: "10px", height: "10px" }}
                 className="mr-4"
               />
               <label
