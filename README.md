@@ -55,3 +55,15 @@ Welcome to the Ettarra Coffee Companion project! This project aims to enhance th
 
 3. Set up the database:
    Create the necessary tables and schemas as defined in the SQL scripts
+
+4. Configure environment variables:
+   Create a .env file and define variables such as database connection details, API keys, etc.
+
+5. Run the Application
+   ```bash
+   npm run dev
+
+## Contributors
+  Navneet Nair(@navneetnair7)
+  Satyam Jaiswal(@1SatyamJaiswal)
+  Vikas Rajpurohit(@Vikas-Rajpurohit)
