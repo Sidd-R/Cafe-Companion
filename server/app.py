@@ -14,6 +14,9 @@ from langchain.utilities import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
 from langchain.llms import GooglePalm
 from flask_cors import CORS, cross_origin
+from future_events import get_offers
+from web_scraping import pipeline
+
 
 api_key = 'AIzaSyAk7gt4eMf1GHY-ZCQBL7LGqNp0c98bK1I'
 
@@ -129,14 +132,6 @@ def order():
 
         return jsonify({"message": "success"})
 
-
-# CREATE TABLE inventory (
-#     id INT AUTO_INCREMENT PRIMARY KEY,
-#     name VARCHAR(100),
-#     quantity FLOAT
-# );
-
-
 @app.route("/inventory", methods=["GET", "POST", "PUT"])
 @cross_origin(supports_credentials=True)
 def inventory():
@@ -207,6 +202,17 @@ def get_sales():
     #for i in json_data:
     #   print(i)
     return jsonify(json_data)
+
+@app.get('/future_events')
+@cross_origin(supports_credentials=True)
+def get_future_events():
+    # print("Getting future events")
+    return jsonify(get_offers())    
+
+@app.get('/pipline')
+@cross_origin(supports_credentials=True)
+def run_pipline():
+    return jsonify(pipeline())
 
 if __name__ == "__main__":
     with app.app_context():
