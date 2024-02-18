@@ -152,7 +152,7 @@ const AnalysisPage = () => {
           ))}
         </select>
       </div> */}
-      <div className="flex flex-row items-center w-[100%] justify-evenly px-10">
+      <div className="flex flex-row items-end mb-8 w-[100%] justify-evenly">
         <Histogram />
         <PieChart />
       </div>

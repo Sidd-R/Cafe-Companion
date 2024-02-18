@@ -94,7 +94,7 @@ const MapComponent: React.FC = () => {
                   {/* Add a button to open the comparison panel */}
                   <button
                     onClick={handleComparisonButtonClick}
-                    className="mt-4 p-2 bg-blue-600 text-white rounded-sm"
+                    className="mt-2 p-2 bg-blue-600 text-white rounded-sm"
                   >
                     View Comparison
                   </button>

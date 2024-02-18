@@ -1,4 +1,4 @@
-import {View, Text, Dimensions, StyleSheet} from 'react-native';
+import {View, Text, Dimensions, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Carousel from 'react-native-reanimated-carousel';
 import {Surface, Appbar} from 'react-native-paper';
@@ -8,6 +8,11 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 const HomeScreen = () => {
   const width = Dimensions.get('window').width;
+  const images = [
+    require('../assets/banner1.jpg'),
+    require('../assets/banner2.jpg'),
+    require('../assets/banner3.jpg'),
+  ]
   return (
     <ScrollView style={{flex:1}}>
       <Surface style={styles.container}>
@@ -17,7 +22,8 @@ const HomeScreen = () => {
             width={width}
             height={220}
             autoPlay={true}
-            data={[...new Array(6).keys()]}
+            autoPlayInterval={3000}
+            data={[...new Array(3).keys()]}
             scrollAnimationDuration={1000}
             renderItem={({index}) => (
               <View
@@ -25,10 +31,14 @@ const HomeScreen = () => {
                   flex: 1,
                   justifyContent: 'center',
                 }}>
-                <Text
-                  style={{textAlign: 'center', fontSize: 30, color: '#262626'}}>
-                  {index}
-                </Text>
+                <Image
+                  source={images[index]}
+                  style={{
+                    width: width,
+                    height: 220,
+                    resizeMode: 'stretch',
+                  }}
+                />
               </View>
             )}
           />

@@ -1,6 +1,5 @@
 import {
   View,
-  Text,
   Dimensions,
   Alert,
   Pressable,
@@ -19,8 +18,8 @@ import {
 import {AuthStackParamList} from '../App';
 import axios from 'axios';
 import EncryptedStorage from 'react-native-encrypted-storage';
-import {BottomNavigation} from 'react-native-paper';
-import {useTheme} from 'react-native-paper';
+import {Appbar, BottomNavigation, FAB, Surface, Text, useTheme} from 'react-native-paper';
+// import {useTheme} from 'react-native-paper';
 import StatusBar from '../components/StatusBar';
 import SearchScreen from './SearchScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -30,6 +29,14 @@ export type AppBottomNavigationParamList = {
   HOME: {authnav: NativeStackNavigationProp<AuthStackParamList, 'APP'>};
   SHOP: undefined;
   SEARCH: undefined;
+  PRODUCT: {
+    product: {
+      name: string;
+      description: string;
+      med_price: number;
+      large_price: number;
+    };
+  }
 };
 
 type Props = NativeStackScreenProps<AuthStackParamList, 'APP'>;
@@ -40,6 +47,27 @@ const AppNavigation = ({navigation}: Props) => {
   const theme = useTheme();
   return (
     <>
+    <FAB
+    icon="chat"
+    style={{
+      position: 'absolute',
+      margin: 16,
+      right: 0,
+      bottom: 90,
+      zIndex: 100,
+      backgroundColor: theme.colors.primary,
+    }}
+    onPress={async () => await Linking.openURL('whatsapp://send?phone=+14155238886')}
+  />
+      <Surface style={{
+        height: 75,
+        elevation: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+        <Text variant='displaySmall' >Ettarra</Text>
+
+      </Surface>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
@@ -117,6 +145,7 @@ const AppNavigation = ({navigation}: Props) => {
             tabBarIcon: ({color, size}) => {
               return <Icon name="magnify" size={size} color={color} />;
             },
+            
           }}
         />
       </Tab.Navigator>
