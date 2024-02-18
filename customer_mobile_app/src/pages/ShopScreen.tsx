@@ -1,6 +1,8 @@
 import {ScrollView, View,} from 'react-native';
 import React from 'react';
 import { Button, FAB, Surface, Text } from 'react-native-paper';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { AppBottomNavigationParamList } from './AppNavigation';
 
 const products = [
   {
@@ -261,7 +263,9 @@ const products = [
   }
 ]
 
-const ShopScreen = ({navigation}) => {
+type Props = NativeStackScreenProps<AppBottomNavigationParamList, 'SHOP'>;
+
+const ShopScreen = ({navigation}:Props) => {
   // React.useEffect(() => {
 
   // }, []);

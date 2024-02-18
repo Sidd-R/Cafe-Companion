@@ -24,6 +24,7 @@ import SearchScreen from './pages/SearchScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import ProductScreen from './pages/ProductScreen';
+import ARViewScreen from './pages/ARViewScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -34,7 +35,15 @@ export type AuthStackParamList = {
   SHOP: undefined;
   SEARCH: undefined;
   APP: undefined;
-  PRODUCT: undefined;
+  PRODUCT: {
+    product: {
+      name: string;
+      description: string;
+      med_price: number;
+      large_price: number;
+    };
+  };
+  ARVIEW: undefined;
 };
 
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
@@ -58,6 +67,7 @@ function App(): React.JSX.Element {
           <AuthStack.Navigator screenOptions={{headerShown: false}}>
             <AuthStack.Screen name="APP" component={AppNavigation} />
             <AuthStack.Screen name="PRODUCT" component={ProductScreen} />
+            <AuthStack.Screen name="ARVIEW" component={ARViewScreen} />
           </AuthStack.Navigator>
         </SafeAreaView>
       </GestureHandlerRootView>

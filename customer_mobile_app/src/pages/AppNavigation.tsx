@@ -37,6 +37,7 @@ export type AppBottomNavigationParamList = {
       large_price: number;
     };
   }
+  ARVIEW: undefined;
 };
 
 type Props = NativeStackScreenProps<AuthStackParamList, 'APP'>;
@@ -64,6 +65,7 @@ const AppNavigation = ({navigation}: Props) => {
         elevation: 5,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: theme.colors.primary,
       }}>
         <Text variant='displaySmall' >Ettarra</Text>
 
@@ -74,8 +76,23 @@ const AppNavigation = ({navigation}: Props) => {
           tabBarStyle: {height: 71, paddingBottom: 13},
           tabBarActiveBackgroundColor: theme.colors.primary,
         }}
+        // sceneContainerStyle={{backgroundColor: 'white'}}
         tabBar={({navigation, state, descriptors, insets}) => (
           <BottomNavigation.Bar
+          // shifting
+          activeIndicatorStyle={{
+            backgroundColor: theme.colors.accent,
+          }}
+          style={{
+            backgroundColor: theme.colors.primary,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            elevation: 5,
+            
+            // paddingBottom: 10,
+          // }}
+            // navigation={navigation
+          }}
             navigationState={state}
             safeAreaInsets={insets}
             onTabPress={({route, preventDefault}) => {
@@ -119,11 +136,16 @@ const AppNavigation = ({navigation}: Props) => {
         <Tab.Screen
           name="HOME"
           component={HomeScreen}
+          
           options={{
             tabBarLabel: 'HOME',
-
+           
+            
             tabBarIcon: ({color, size}) => {
-              return <Icon name="home" size={size} color={color} />;
+              return <Icon name="home" size={size} color={color} style={{
+                // backgroundColor: 'red',
+              
+              }} />;
             },
           }}
         />

@@ -78,6 +78,7 @@ const ProductScreen = ({route, navigation}: Props) => {
             }}
             onPress={() => {
               // Add to cart
+              navigation.navigate('ARVIEW');
             }}>
             <Text variant="titleLarge">View in AR</Text>
           </Button>

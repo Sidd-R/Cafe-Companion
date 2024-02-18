@@ -1,12 +1,13 @@
-import {View, Text, Dimensions, StyleSheet, Image} from 'react-native';
+import {View, Dimensions, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Carousel from 'react-native-reanimated-carousel';
-import {Surface, Appbar} from 'react-native-paper';
+import {Surface, Appbar, useTheme, Text} from 'react-native-paper';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import WebView from 'react-native-webview';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const HomeScreen = () => {
+  const theme = useTheme();
   const width = Dimensions.get('window').width;
   const images = [
     require('../assets/banner1.jpg'),
@@ -48,14 +49,14 @@ const HomeScreen = () => {
           style={{
             paddingVertical: 30,
             paddingHorizontal: 20,
-            backgroundColor: '#ac9c8b',
+            backgroundColor: theme.colors.surface,
           }}>
           <View
             style={{
-              borderRadius: 10,
+              borderRadius: 15,
               overflow: 'hidden',
             }}>
-            <YoutubePlayer height={180} play={true} videoId={'Nu8kIIL-CDA'} />
+            <YoutubePlayer height={200} play={true} videoId={'Nu8kIIL-CDA'} />
           </View>
         </View>
         {/*Reels Section End*/}
@@ -64,8 +65,9 @@ const HomeScreen = () => {
           style={{
             paddingVertical: 20,
             paddingHorizontal: 20,
+            flex: 1,
           }}>
-          <Text style={{fontSize: 20, color: '#262626', fontWeight:'900'}}>Recommendations</Text>
+          <Text style={{ color: '#262626', fontWeight:'900'}} variant='titleLarge'>Recommendations</Text>
         </View>
         {/*Recommendations Section End*/}
       </Surface>
