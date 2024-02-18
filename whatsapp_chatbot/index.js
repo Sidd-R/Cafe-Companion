@@ -33,6 +33,10 @@ client.on("ready", () => {
 client.on("message", async (message) => {
   //   console.log(message.body);
 
+  if (message.body === "!Hi") {
+    await message.reply("Hello!");
+  }
+
   // Send basic message
   if (message.body === "!ping") {
     await message.reply("pong");
@@ -102,9 +106,7 @@ client.on("message", async (message) => {
       }
       console.log("Review stored!");
     });
-    await message.reply(
-      "Thank you for your review! We will get back to you soon."
-    );
+    await message.reply("Thank you for your review!");
   }
 
   if (message.body.startsWith("!recommend")) {
@@ -117,6 +119,13 @@ client.on("message", async (message) => {
       await message.reply(
         "Here are your recommendations: \n" + data.toString()
       );
+    });
+  }
+
+  if (message.body === "!suggest") {
+    const suggest = spawner("python", ["suggest.py"]);
+    suggest.stdout.on("data", async (data) => {
+      await message.reply("Here are your suggestions: \n" + data.toString());
     });
   }
 });
