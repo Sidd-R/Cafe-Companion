@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Improvements = () => {
   const [checklist, setChecklist] = useState([
@@ -35,9 +35,14 @@ const Improvements = () => {
       id: 7,
       text: "Make sure the mocha is made according to the customer's specifications.",
       selected: false,
+    },{
+      id: 8,
+      text: "Make sure the flat white is fresh and tastes good. Use fresh ingredients.",
+      selected: false,
     }
     // Add more items as needed
   ]);
+  
 
   const handleCheckboxChange = (id: number) => {
     setChecklist((prevChecklist) =>

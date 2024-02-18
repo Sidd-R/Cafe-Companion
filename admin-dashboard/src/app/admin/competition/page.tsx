@@ -21,16 +21,16 @@ interface Restaurant {
 
 // Define the MapComponent functional component
 const MapComponent: React.FC = () => {
-  const defaultCenter = { lat: 37.7749, lng: -122.4194 }; // Example coordinates for San Francisco
+  const defaultCenter = { lat: 19.1013665, lng: 72.8273958 }; // Example coordinates for San Francisco
   const defaultZoom = 15;
 
   // Define an array of restaurants
   const restaurants: Restaurant[] = [
     {
       id: 1,
-      name: "Restaurant 1",
-      latitude: 37.7749,
-      longitude: -122.4194,
+      name: "Ettarra Coffee House",
+      latitude: 19.1013665,
+      longitude: 72.8273958,
       additionalData: "Some data for Restaurant 1",
       rating: 4.5,
       strengths: ["Strength 1", "Strength 2"],
@@ -38,14 +38,24 @@ const MapComponent: React.FC = () => {
     },
     {
       id: 2,
-      name: "Restaurant 2",
-      latitude: 37.7786,
-      longitude: -122.4193,
+      name: "Love Latte Juhu",
+      latitude: 19.1112055,
+      longitude: 72.8241743,
       additionalData: "Some data for Restaurant 2",
       rating: 4.0,
       strengths: ["Strength 1", "Strength 2"],
       weaknesses: ["Weakness 1", "Weakness 2"],
     },
+    {
+      id: 2,
+      name: "Ananda Cafe",
+      latitude: 19.1057439,
+      longitude: 72.8234257,
+      additionalData: "Some data for Restaurant 3",
+      rating: 4.0,
+      strengths: ["Strength 1", "Strength 2"],
+      weaknesses: ["Weakness 1", "Weakness 2"],
+    }
     // Add other restaurants here
   ];
 

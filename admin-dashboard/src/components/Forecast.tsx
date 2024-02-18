@@ -97,7 +97,7 @@ const Forecast = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-8 align-middle justify-center">
-      <h2 className="text-2xl font-semibold mb-4">Future Sales Forecast</h2>
+      <h2 className="text-2xl font-semibold mb-4">Sales Forecast</h2>
       <div className="bg-white p-4 ">
         <Line data={chartData} options={chartOptions} />
         <div className="flex justify-between mt-4">

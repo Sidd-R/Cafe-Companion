@@ -26,7 +26,7 @@ import { ScaleIcon } from '@heroicons/react/24/solid'
 // import { SocketContext } from './layout';
 
 const cards = [
-  { name: 'Total Revenue', href: '#', icon: ScaleIcon, amount: '₹1,00,000' },
+  { name: 'Total Revenue', href: '#', icon: ScaleIcon, amount: '₹1,23,580' },
 ]
 // const transactions = [
 //   {

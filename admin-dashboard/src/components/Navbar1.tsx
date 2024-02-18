@@ -174,7 +174,7 @@ export default function Navbar1() {
                 alt="Workflow"
               /> */}
               <div className="text-indigo-50 font-thin text-3xl">
-                <Image src="/logo.png" width={220} height={50} style={{height: 50}}/>
+                <Image src="/logo.png" width={220} height={50} style={{height: 50, backgroundColor: "white"}}/>
               </div>
             </div>
             <div className="mt-5 flex-1 flex flex-col">

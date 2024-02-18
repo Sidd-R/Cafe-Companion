@@ -15,7 +15,7 @@ const SalesHistory = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}sales`,{
+      .get(`https://52b0-14-139-125-227.ngrok-free.app/getorders`,{
         headers: headers,
       })
       .then((response) => {
@@ -32,6 +32,17 @@ const SalesHistory = () => {
       (filterOrderType === "" || item.Order_type === filterOrderType)
     );
   });
+
+  function formatTimestamp(timestampString) {
+    // Create a Date object from the timestamp string
+    var timestamp = new Date(timestampString);
+
+    // Format the date as a readable string
+    var formattedDate = timestamp.toLocaleString();
+
+    // Return the formatted date
+    return formattedDate;
+  }
 
   return (
     <div className="container mt-8 md:pl-72 px-4">
@@ -70,12 +81,11 @@ const SalesHistory = () => {
         <thead className="bg-gray-100">
           <tr>
             <th className="py-2 px-4 border-b">Timestamp</th>
-            <th className="py-2 px-4 border-b">Order Type</th>
             <th className="py-2 px-4 border-b">Item Name</th>
             <th className="py-2 px-4 border-b">Quantity</th>
             <th className="py-2 px-4 border-b">Total</th>
             <th className="py-2 px-4 border-b">Category</th>
-            <th className="py-2 px-4 border-b">Customer Name</th>
+            <th className="py-2 px-4 border-b">Customer Number</th>
           </tr>
         </thead>
 
@@ -86,13 +96,12 @@ const SalesHistory = () => {
               key={index}
               className="transition duration-300 hover:bg-gray-50"
             >
-              <td className="py-2 px-4 border-b">{item.Timestamp}</td>
-              <td className="py-2 px-4 border-b">{item.Order_type}</td>
-              <td className="py-2 px-4 border-b">{item.Item_name}</td>
-              <td className="py-2 px-4 border-b">{item.Quantity}</td>
-              <td className="py-2 px-4 border-b">{item.Total}</td>
-              <td className="py-2 px-4 border-b">{item.Category}</td>
-              <td className="py-2 px-4 border-b">{item.Customer_Name}</td>
+              <td className="py-2 px-4 border-b">{formatTimestamp(item.time_stamp)}</td>
+              <td className="py-2 px-4 border-b">{item.name}</td>
+              <td className="py-2 px-4 border-b">{item.quantity}</td>
+              <td className="py-2 px-4 border-b">{item.total}</td>
+              <td className="py-2 px-4 border-b">{item.type}</td>
+              <td className="py-2 px-4 border-b">{item.customer_no}</td>
             </tr>
           ))}
         </tbody>
