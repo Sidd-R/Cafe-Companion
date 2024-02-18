@@ -106,6 +106,19 @@ client.on("message", async (message) => {
       "Thank you for your review! We will get back to you soon."
     );
   }
+
+  if (message.body.startsWith("!recommend")) {
+    const recommend = message.body.split(" ").slice(1).join(" ");
+    // console.log(recommend);
+    const from = message.from.split("@")[0];
+    const recommendation = spawner("python", ["recommend.py", recommend]);
+    recommendation.stdout.on("data", async (data) => {
+      // console.log(data.toString());
+      await message.reply(
+        "Here are your recommendations: \n" + data.toString()
+      );
+    });
+  }
 });
 
 client.initialize();
