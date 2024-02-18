@@ -24,7 +24,7 @@ const months = Object.keys(ratingsData);
 const Sales = () => {
   const totalRatings = months.map((month) => ratingsData[month]);
 
-  const dataPointsPerPage = 8;
+  const dataPointsPerPage = 6;
 
   const [currentPage, setCurrentPage] = useState(0);
 
