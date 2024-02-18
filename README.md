@@ -35,8 +35,8 @@ Welcome to the Ettarra Coffee Companion project! This project aims to enhance th
 
 ## Technologies Used
 
-- Frontend: HTML, CSS, JavaScript, React
-- Backend: Node.js, Express.js
+- Frontend: Nextjs, TailwindUI
+- Backend: Flask
 - Database: SQL (MySQL)
 - Chatbot: Puppeteer web automation (for WhatsApp integration)
 - Mobile App: React Native
@@ -46,11 +46,11 @@ Welcome to the Ettarra Coffee Companion project! This project aims to enhance th
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ettarra-coffee-companion.git
+   git clone https://github.com/Sidd-R/Loading..._hackniche_ettarra
 
 2. Install dependencies
    ```bash
-   cd ettarra-coffee-companion
+   cd ettarra-coffee-companion 
    npm install
 
 3. Set up the database:
