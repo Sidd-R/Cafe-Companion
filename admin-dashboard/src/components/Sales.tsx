@@ -86,7 +86,7 @@ const Sales = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-8">
-      <h2 className="text-2xl font-semibold mb-4">Total Sales</h2>
+      <h2 className="text-2xl font-semibold mb-4">Recent Sales</h2>
       <div className="bg-white p-4 ">
         <Line data={chartData} options={chartOptions} />
         <div className="flex justify-between mt-4">

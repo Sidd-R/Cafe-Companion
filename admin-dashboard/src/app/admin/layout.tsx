@@ -1,5 +1,6 @@
 import ChatBot from '@/components/ChatBot';
 import Navbar1 from '@/components/Navbar1';
+import Offers from '@/components/Offers';
 import React from 'react'
 
 function layout({
@@ -11,7 +12,8 @@ function layout({
     <>
     <Navbar1/>
     {children}
-    <ChatBot/>
+    <ChatBot />
+    <Offers />
     </>
   )
 }
