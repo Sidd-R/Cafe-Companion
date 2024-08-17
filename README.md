@@ -37,7 +37,7 @@ Welcome to the Café Companion project! This project aims to enhance the custome
 
 - Web App: Nextjs, TailwindUI
 - Mobile App: React Native, React Native Paper, 
-- Backend: Flask, Selenium
+- Backend: Flask, Selenium, SocketIO
 - Database: MySQL
 - Chatbot: Puppeteer web automation (for WhatsApp integration), LangChain
 - Data Visualization: Chart.js
