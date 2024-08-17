@@ -1,6 +1,6 @@
-# Ettarra Coffee Companion
+# Café Companion
 
-Welcome to the Ettarra Coffee Companion project! This project aims to enhance the customer experience and streamline operations at Ettarra Coffee Store through the implementation of a comprehensive admin dashboard, a WhatsApp chatbot, and a mobile app.
+Welcome to the Café Companion project! This project aims to enhance the customer experience and streamline operations at any Café through the implementation of a comprehensive admin dashboard, a WhatsApp chatbot, and a mobile app.
 
 ## Features
 
@@ -35,12 +35,13 @@ Welcome to the Ettarra Coffee Companion project! This project aims to enhance th
 
 ## Technologies Used
 
-- Frontend: Nextjs, TailwindUI
-- Backend: Flask
-- Database: SQL (MySQL)
-- Chatbot: Puppeteer web automation (for WhatsApp integration)
-- Mobile App: React Native
+- Web App: Nextjs, TailwindUI
+- Mobile App: React Native, React Native Paper, 
+- Backend: Flask, Selenium
+- Database: MySQL
+- Chatbot: Puppeteer web automation (for WhatsApp integration), LangChain
 - Data Visualization: Chart.js
+- AI/ML: Sk-learn, Langchain(GooglePalm)
 
 ## Installation
 
@@ -49,9 +50,6 @@ Welcome to the Ettarra Coffee Companion project! This project aims to enhance th
    git clone https://github.com/Sidd-R/Loading..._hackniche_ettarra
 
 2. Install dependencies
-   ```bash
-   cd ettarra-coffee-companion 
-   npm install
 
 3. Set up the database:
    Create the necessary tables and schemas as defined in the SQL scripts
@@ -60,10 +58,9 @@ Welcome to the Ettarra Coffee Companion project! This project aims to enhance th
    Create a .env file and define variables such as database connection details, API keys, etc.
 
 5. Run the Application
-   ```bash
-   npm run dev
 
 ## Contributors
-  Navneet Nair(@navneetnair7)
-  Satyam Jaiswal(@1SatyamJaiswal)
-  Vikas Rajpurohit(@Vikas-Rajpurohit)
+  - Siddhant Rao(@Sidd-R)
+  - Navneet Nair(@navneetnair7)
+  - Satyam Jaiswal(@1SatyamJaiswal)
+  - Vikas Rajpurohit(@Vikas-Rajpurohit)
