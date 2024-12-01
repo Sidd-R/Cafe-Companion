@@ -47,7 +47,7 @@ Welcome to the Café Companion project! This project aims to enhance the custome
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Sidd-R/Loading..._hackniche_ettarra
+   git clone  https://github.com/Sidd-R/Cafe-Companion
 
 2. Install dependencies
 
